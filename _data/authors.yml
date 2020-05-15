@@ -1,0 +1,46 @@
+- id: amd
+  name: "Anne-Marie Dery"
+  position: equipe
+  avatar: "assets/img/avatars/anne_marie_avatar.jpg"
+  url: "https://www.linkedin.com/in/anne-marie-pinna-dery-911540b/?originalSubdomain=fr"
+  institution: UCA
+  short: Maître de Conférences Hors Classe et responsable des relations internationales pour le département Informatique de Polytech Nice - Sophia Antipolis.
+- id: seb
+  name: "Sebastien Mosser"
+  position: equipe
+  avatar: "assets/img/avatars/mosser.png"
+  url: "https://mosser.github.io/"
+  institution: UQAM
+  short: Professeur de génie logiciel, ancien Maître de conférences au sein d’UNS (2012-2018). 
+- id: mbf
+  name: "Mireille Blay-Fornarino"
+  position: equipe
+  avatar: "assets/img/avatars/mbf.jpg"
+  url: "https://www.linkedin.com/in/mireille-blay-fornarino-0663554?originalSubdomain=fr"
+  institution: UCA
+  short: Professeur des Universités et Directrice du département Informatique de l’IUT.
+- id: uca
+  name: Université Côté d'Azur
+  position: institution
+  logo: "assets/img/avatars/uca.png"
+  url: "http://univ-cotedazur.fr/fr#.Xr2eKWgzZPY"
+- id: uqam
+  name: Université du Québec à Montréal
+  position: institution
+  logo: "assets/img/avatars/uqam.png"
+  url: "https://uqam.ca/"
+- id: frqnt
+  name: Fonds de recherche Nature et technologies
+  position: institution
+  logo: "assets/img/avatars/frqnt.png"
+  url: "http://www.frqnt.gouv.qc.ca/en/accueil"
+- id: mae
+  name: Ministère des Affaires Étrangères Français 
+  position: institution
+  logo: "assets/img/avatars/mae.png"
+  url: "https://www.gouvernement.fr/ministere-de-l-europe-et-des-affaires-etrangeres"
+- name: Alison Lecuyer
+  position: intervenant
+  institution: IUT de Nice 
+  date: Avril 2020
+  contribution: Création du site web présentant le projet
