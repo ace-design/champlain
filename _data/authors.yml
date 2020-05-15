@@ -32,7 +32,7 @@
 - id: frqnt
   name: Fonds de recherche Nature et technologies
   position: institution
-  logo: "assets/img/avatars/frqnt.png"
+  logo: "assets/img/avatars/FRQNT.png"
   url: "http://www.frqnt.gouv.qc.ca/en/accueil"
 - id: mae
   name: Ministère des Affaires Étrangères Français 
