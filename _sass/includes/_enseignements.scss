@@ -296,7 +296,15 @@ p.heading {
     margin-bottom: 0.2em;
     a {
         font-size: 1.3em;
+        color: $text-color;
     }
+}
+
+h1.materiels {
+    color: $meta;
+    letter-spacing: 0.1em;
+    border-top: 1px solid rgba(0,0,0,0.1);
+    margin-top: 1.5em;
 }
 
 .timeline {
