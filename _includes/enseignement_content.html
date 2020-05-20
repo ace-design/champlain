@@ -25,7 +25,15 @@
 {%- if item.level -%}
 <div class="enseignement-info">
     <p class="label">Niveau</p>
-    <p class="souslabel">Cycle {{ item.level }}</p>
+    {% if item.level == 1 %}
+    <p class="souslabel">Licence/Bachelor</p>
+    {% endif %}
+    {% if item.level == 2 %}
+    <p class="souslabel">Master/Maîtrise</p>
+    {% endif %}
+    {% if item.level == 3 %}
+    <p class="souslabel">Doctorat</p>
+    {% endif %}
 </div>
 {%- endif -%}
 

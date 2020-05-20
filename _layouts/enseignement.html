@@ -33,15 +33,15 @@ layout: default
 
         {% if item2.type == "sujet de projet" %}
         {% assign type = "is-warning" %}
-        {% assign icone = "fa-flag" %}
+        {% assign icone = "fa-pencil" %}
         {% endif %}
         {% if item2.type == "evaluation" %}
         {% assign type = "is-danger" %}
-        {% assign icone = "fa-flag" %}
+        {% assign icone = "fa-graduation-cap" %}
         {% endif %}
         {% if item2.type == "support de cours" %}
         {% assign type = "is-primary" %}
-        {% assign icone = "fa-flag" %}
+        {% assign icone = "fa-book" %}
         {% endif %}
 
         <div class="timeline-item {{ type }}" style="padding: 0">

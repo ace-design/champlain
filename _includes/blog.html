@@ -11,24 +11,17 @@
         </div>
         {% endif %}
         <span>
-          <header>
-            <h2>
-              <a aria-label="{{ post.title }}" class="post-link" href="{{ post.url | relative_url }}">
-                {{ post.title }}
-              </a>
-            </h2>
-            {% include post_info.html author=post.author date=post.date %}
-          </header>
-          {% if site.excerpt or site.theme_settings.excerpt %}
-              <div class="excerpt">
-                  {% if site.excerpt == "truncate" %}
-                     {{ post.content | strip_html | truncate: '250' | escape }}
-                  {% else %}
-                     {{ post.excerpt | strip_html | escape }}
-                  {% endif %}
-              </div>
-          {% endif %}
-      </span>
+            <header>
+                <h2>
+                    {{ post.title }}
+                </h2>
+                {% include post_info.html author=post.author date=post.date %}
+            </header>
+            <div class="excerpt">
+                {{ post.content }}
+                {{ post.excerpt }}
+            </div>
+        </span>
     </div>
     {% endfor %}
 </div>

@@ -10,7 +10,7 @@
 {% assign sujetdeprojet = materielsdecours | where: 'type',"sujet de projet" | sort: 'date' | reverse %}
 {% assign year = 2000 %}
 {% assign type = "is-warning" %}
-{% assign icone = "fa-flag" %}
+{% assign icone = "fa-pencil" %}
 
 <h1 id="sujetsdeprojet">Sujets de projet</h1>
 <div class="timeline">
@@ -43,7 +43,7 @@
 {% assign evaluation = materielsdecours | where: 'type',"evaluation" | sort: 'date' | reverse %}
 {% assign year = 2000 %}
 {% assign type = "is-danger" %}
-{% assign icone = "fa-flag" %}
+{% assign icone = "fa-graduation-cap" %}
 
 <h1 id="evaluations">Evaluations</h1>
 <div class="timeline">
@@ -75,7 +75,7 @@
 {% assign supportsdecours = materielsdecours | where: 'type',"support de cours" | sort: 'date' | reverse %}
 {% assign year = 2000 %}
 {% assign type = "is-primary" %}
-{% assign icone = "fa-flag" %}
+{% assign icone = "fa-book" %}
 
 <h1 id="supportsdecours">Supports de cours</h1>
 <div class="timeline">

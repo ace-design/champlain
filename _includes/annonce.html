@@ -1,18 +1,13 @@
+{% assign page = site.pages | where: "title","Annonces" | first %}
+
 <div class="posts annonce">
     {% assign post = site.posts[0] %}
     <div class="annonce-teaser">
-        {% if post.thumbnail %}
-        <div class="post-img">
-            <a aria-label="{{ post.title }}" href="{{ post.url | relative_url }}">
-                <img alt="{{ post.title }}" src="{{ post.thumbnail | relative_url }}">
-            </a>
-        </div>
-        {% endif %}
         <span>
           <header>
             <h3 class="annonce">
-              <a aria-label="{{ post.title }}" class="post-link" href="{{ post.url | relative_url }}">
-                {{ post.title }}
+              <a aria-label="Plus d'annonces" class="post-link" href="{{ page.url | relative_url }}">
+                {{ post.title }} <i style="font-size: 0.7em">(Cliquez pour plus d'annonces)</i>
               </a>
             </h3>
             {% include post_info.html author=post.author date=post.date %}
@@ -28,8 +23,3 @@
     </div>
 </div>
 
-{% assign page = site.pages | where: "title","Annonces" | first %}
-
-<a aria-label="Plus d'annonces" href="{{ page.url | relative_url }}" class="button">
-            <span>Plus d'annonces</span>
-</a>
