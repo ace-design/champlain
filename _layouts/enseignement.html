@@ -11,29 +11,13 @@ layout: default
     </header>
 
     {{ content }}
+    
     {% if page.link %}
-    <a href="{{ page.link }}">Lien externe vers l'enseignement</a>
+    <p style="text-align: center"><a href="{{ page.link }}">Lien externe vers l'enseignement</a></p>
     {% endif %}
 
 
     <h2>Supports de cours</h2>
-    {% assign supportscours = site.supportscours | where: 'enseignement', page.sigle | sort: 'date' | reverse %}
-
-    <div class="support">
-        {%- for item2 in supportscours -%}
-        <div class="support-teaser">
-            <span>
-                <header>
-                    <h1><a href="{{ item2.url | relative_url }}">{{ item2.title }}</a></h1>
-                    {% include support_info2.html item=item2 %}
-                </header>
-            </span>
-        </div>
-        {%- endfor -%}
-    </div>
-
-
-    <h2>Test timeline</h2>
     <div class="timeline">
         <header class="timeline-header">
             <span class="tag is-medium is-primary">Start</span>

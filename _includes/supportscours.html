@@ -1,75 +1,106 @@
 {% assign materielsdecours = site.supportscours %}
 
+<div class="center-div">
+    <a href="#sujetsdeprojet" class="bouton">Sujets de projet</a>
+    <a href="#evaluations" class="bouton">Evaluations</a>
+    <a href="#supportsdecours" class="bouton">Supports de cours</a>
+</div>
+
 
 {% assign sujetdeprojet = materielsdecours | where: 'type',"sujet de projet" | sort: 'date' | reverse %}
 {% assign year = 2000 %}
-<div class="support">
-    <h1>Sujets de projet</h1>
-    {% for item in sujetdeprojet %}
+{% assign type = "is-warning" %}
+{% assign icone = "fa-flag" %}
+
+<h1 id="sujetsdeprojet">Sujets de projet</h1>
+<div class="timeline">
+    {%- for item in sujetdeprojet -%}
+
     {% assign current_year = item.date | date: "%Y" %}
     {% assign next_year = item.date | date: "%Y" | plus: '1' %}
-    {% if year != current_year  %} 
-    <h1>{{ current_year }} - {{ next_year }}</h1>
+    {% if year != current_year  %}
+    <header class="timeline-header">
+        <span class="tag is-primary">{{ current_year }} - {{ next_year }}</span>
+    </header>
     {% assign year = current_year %}
     {% endif %}
-    
-    <div class="support-teaser">
-        <span>
-            <header>
-                <h1><a href="{{ item.url | relative_url }}">{{ item.title }}</a></h1>
+
+    <div class="timeline-item {{ type }}" style="padding: 0">
+        <div class="timeline-marker {{ type }} is-icon"><i class="fa {{ icone }}"></i></div>
+        <div class="timeline-content">
+            <div class="support-teaser">
+                <p class="heading"><a href="{{ item2.url | relative_url }}">{{ item.title }}</a></p>
                 {% include support_info.html item=item %}
-            </header>
-        </span>
+            </div>
+        </div>
     </div>
-    {% endfor %}
+
+    {%- endfor -%}
 </div>
+
 
 
 {% assign evaluation = materielsdecours | where: 'type',"evaluation" | sort: 'date' | reverse %}
 {% assign year = 2000 %}
-<div class="support">
-    <h1>Evaluations</h1>
-    {% for item in evaluation %}
+{% assign type = "is-danger" %}
+{% assign icone = "fa-flag" %}
+
+<h1 id="evaluations">Evaluations</h1>
+<div class="timeline">
+    {%- for item in evaluation -%}
+
     {% assign current_year = item.date | date: "%Y" %}
     {% assign next_year = item.date | date: "%Y" | plus: '1' %}
-    {% if year != current_year  %} 
-    <h1>{{ current_year }} - {{ next_year }}</h1>
+    {% if year != current_year  %}
+    <header class="timeline-header">
+        <span class="tag is-primary">{{ current_year }} - {{ next_year }}</span>
+    </header>
     {% assign year = current_year %}
     {% endif %}
-    
-    <div class="support-teaser">
-        <span>
-            <header>
-                <h1><a href="{{ item.url | relative_url }}">{{ item.title }}</a></h1>
+
+    <div class="timeline-item {{ type }}" style="padding: 0">
+        <div class="timeline-marker {{ type }} is-icon"><i class="fa {{ icone }}"></i></div>
+        <div class="timeline-content">
+            <div class="support-teaser">
+                <p class="heading"><a href="{{ item2.url | relative_url }}">{{ item.title }}</a></p>
                 {% include support_info.html item=item %}
-            </header>
-        </span>
+            </div>
+        </div>
     </div>
-    {% endfor %}
+
+    {%- endfor -%}
 </div>
 
 
 {% assign supportsdecours = materielsdecours | where: 'type',"support de cours" | sort: 'date' | reverse %}
 {% assign year = 2000 %}
-<div class="support">
-    <h1>Supports de cours</h1>
-    {% for item in supportsdecours %}
+{% assign type = "is-primary" %}
+{% assign icone = "fa-flag" %}
+
+<h1 id="supportsdecours">Supports de cours</h1>
+<div class="timeline">
+    {%- for item in supportsdecours -%}
+
     {% assign current_year = item.date | date: "%Y" %}
     {% assign next_year = item.date | date: "%Y" | plus: '1' %}
-    {% if year != current_year  %} 
-    <h1>{{ current_year }} - {{ next_year }}</h1>
+    {% if year != current_year  %}
+    <header class="timeline-header">
+        <span class="tag is-primary">{{ current_year }} - {{ next_year }}</span>
+    </header>
     {% assign year = current_year %}
     {% endif %}
-    
-    <div class="support-teaser">
-        <span>
-            <header>
-                <h1><a href="{{ item.url | relative_url }}">{{ item.title }}</a></h1>
+
+    <div class="timeline-item {{ type }}" style="padding: 0">
+        <div class="timeline-marker {{ type }} is-icon"><i class="fa {{ icone }}"></i></div>
+        <div class="timeline-content">
+            <div class="support-teaser">
+                <p class="heading"><a href="{{ item2.url | relative_url }}">{{ item.title }}</a></p>
                 {% include support_info.html item=item %}
-            </header>
-        </span>
+            </div>
+        </div>
     </div>
-    {% endfor %}
+
+    {%- endfor -%}
 </div>
 
 {% include blog_nav.html %}
