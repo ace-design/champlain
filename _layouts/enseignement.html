@@ -7,17 +7,20 @@ layout: default
         {% unless page.hide_title %}
         <h1 class="title">{{ page.sigle }} - {{ page.title }}</h1>
         {% include enseignement_content.html item=page %}
+        <div class="enseignement-info">
+            <p class="label"><a href="#materiels">Accéder aux matériels de cours</a></p>
+        </div>
         {% endunless %}
     </header>
 
     {{ content }}
-    
+
     {% if page.link %}
     <p style="text-align: center"><a href="{{ page.link }}">Lien externe vers l'enseignement</a></p>
     {% endif %}
 
 
-    <h2>Supports de cours</h2>
+    <h2 id="materiels">Matériels de cours</h2>
     <div class="timeline">
         <header class="timeline-header">
             <span class="tag is-medium is-primary">Start</span>
@@ -27,7 +30,7 @@ layout: default
 
 
         {%- for item2 in supportscours -%}
-        
+
         {% if item2.type == "sujet de projet" %}
         {% assign type = "is-warning" %}
         {% assign icone = "fa-flag" %}

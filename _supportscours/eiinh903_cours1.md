@@ -10,7 +10,7 @@ institution: UCA
 composante: Polytech 
 
 level: 2
-ipm: 5
+ihm: 5
 user: 5
 
 enseignement: EIIN615 et EEIN616

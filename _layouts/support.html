@@ -2,11 +2,23 @@
 layout: default
 ---
 
+{% assign travauxetudiants = site.travauxetudiants | where: 'sujet',page.title | sort: 'date' | reverse %}
+{% assign taille = travauxetudiants | size %}
+
 <article {% if page.feature-img or page.color %}class="feature-image" {% endif %}>
     <header id="main" style="">
         {% unless page.hide_title %}
         <h1 class="title">{{ page.title }}</h1>
         {% include support_content.html item=page %}
+        
+        
+        {% if page.type == "sujet de projet" and taille > 0 %} 
+        <div class="enseignement-info">
+            <p class="label"><a href="#travaux">Accéder aux travaux des étudiants</a></p>
+        </div>
+        {%- endif -%}
+        
+        
         {% endunless %}
     </header>
     
@@ -17,12 +29,8 @@ layout: default
         <p style="text-align: center"><a href="{{ page.link }}">Lien externe vers le support</a></p>
     {% endif %}
     
-    
-    {% assign travauxetudiants = site.travauxetudiants | where: 'sujet',page.title | sort: 'date' | reverse %}
-    {% assign taille = travauxetudiants | size %}
-    
     {% if page.type == "sujet de projet" and taille > 0 %} 
-    <h2>Exemples travaux étudiants</h2>
+    <h2 id="travaux">Exemples travaux étudiants</h2>
     {%- for item3 in travauxetudiants -%}    
     <span>
         <header>

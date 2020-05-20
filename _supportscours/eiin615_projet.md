@@ -10,7 +10,7 @@ institution: UCA
 composante: Polytech 
 
 level: 2
-ipm: 4
+ihm: 4
 user: 4
 techno: 5
 gl: 2

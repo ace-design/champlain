@@ -9,9 +9,9 @@
         {%- if auteur.url -%}</a>{%- endif -%}
     {% endfor %}
 
-    {%- if item.ipm or item.ia or item.gl or item.user or item.io or item.techo -%}
+    {%- if item.ihm or item.ia or item.gl or item.user or item.io or item.techo -%}
     <p class="label" style="padding-left: 0.2em">Domaines de compétence visés</p>
-    {%- if item.ipm -%}<p class="souslabel"><span class="infobulle" aria-label="Intéractions Personne-Machine">IPM</span></p>{%- endif -%}
+    {%- if item.ihm -%}<p class="souslabel"><span class="infobulle" aria-label="Intéractions Homme-Machine">ihm</span></p>{%- endif -%}
     {%- if item.ia -%}<p class="souslabel"><span class="infobulle" aria-label="Intelligence Artificielle">IA</span></p>{%- endif -%}
     {%- if item.gl -%}<p class="souslabel"><span class="infobulle" aria-label="Génie Logiciel">GL</span></p>{%- endif -%}
     {%- if item.user -%}<p class="souslabel"><span class="infobulle" aria-label="Prise en compte de l'utilisateur">UTILISATEUR</span></p>{%- endif -%}
