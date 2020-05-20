@@ -1,15 +1,16 @@
 {% assign travauxetudiants = site.travauxetudiants | sort: 'date' | reverse %}
 {% assign year = 2000 %}
 
-<div class="enseignement">
+<div class="support">
     {% for item in travauxetudiants %}
     {% assign current_year = item.date | date: "%Y" %}
+    {% assign next_year = item.date | date: "%Y" | plus: '1' %}
     {% if year != current_year  %} 
-    <h1>{{ current_year }}</h1>
+    <h1>{{ current_year }} - {{ next_year }}</h1>
     {% assign year = current_year %}
     {% endif %}
     
-    <div class="enseignement-teaser">
+    <div class="support-teaser">
         <span>
             <header>
                 <h1><a href="{{ item.url | relative_url }}">{{ item.title }}</a></h1>

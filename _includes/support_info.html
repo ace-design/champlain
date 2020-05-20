@@ -9,14 +9,20 @@
         {%- if auteur.url -%}</a>{%- endif -%}
     {% endfor %}
     {%- if item.institution -%}
-        <p class="souslabel">{{ item.institution }}</p>
+    {% assign inst = site.data.authors | where: "id",item.institution | first %}
+    {%- if inst.url -%}<a href="{{ inst.url | relative_url }}" target="_blank">{%- endif -%}
+        <p class="souslabel">{{ inst.id }}</p>
+    {%- if inst.url -%}</a>{%- endif -%}
+    {%- endif -%}
+    {%- if item.composante -%}
+        <p class="souslabel">{{ item.composante }}</p>
     {%- endif -%}
 </div>
 
 <div class="support-info">
 {%- if item.level -%}
     <p class="label">Niveau</p>
-    <img class="niveau" src="{{ site.url }}/assets/img/pourcentages/{{ item.level }}.jpg">
+    <p class="souslabel">Cycle {{ item.level }}</p>
 {%- endif -%}
 
 {%- if item.ipm or item.ia or item.gl or item.user or item.io or item.techo -%}

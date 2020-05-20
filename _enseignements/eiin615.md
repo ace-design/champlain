@@ -2,14 +2,16 @@
 
 layout: enseignement
 
-title: "EIIN615 Projet semestre 6"
+sigle: EIIN615
+title: Projet semestre 6
 date: 12/2019
 
 authors: amd
-institution: UCA Polytech Nice Sophia
+institution: UCA
+composante: Polytech 
 
-level: 3
-ihm: 4
+level: 2
+ipm: 4
 user: 4
 gl: 3
 

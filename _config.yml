@@ -3,7 +3,7 @@ baseurl: "/"
 url: "https://la805419.github.io"
 
 # THEME-SPECIFIC CONFIGURATION
-title: Développement d’applications logicielles en support à la population vieillissante     # site's title
+title: Logiciels en support à la population vieillissante     # site's title
 description: "Présentation du projet"                   # used by search engines
 avatar: assets/img/triangle.png                         # Empty for no avatar in navbar
 favicon: assets/favicon.ico                             # Icon displayed in the tab

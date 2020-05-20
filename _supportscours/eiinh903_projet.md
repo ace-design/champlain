@@ -3,13 +3,14 @@ layout: support
 title: Ateliers à base de quiz pour le centre Alzheimer d'accueil de jour de Biot
 date: October 2019
 authors: amd
-institution: UCA - Polytech 
-level: 5
-ihm: 5 
+institution: UCA
+composante: Polytech  
+level: 2
+ipm: 5 
 user: 5
 techno: 5
 gl: 2
-enseignement: "EIIN615 et EEIN616  : Interfaces tactiles et interfaces réparties sur plusieurs supports"
+enseignement: EIIN615 et EEIN616
 tags: [si5,projet]
 type: sujet de projet 
 --- 

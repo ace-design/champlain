@@ -4,17 +4,17 @@ title: Un quiz pour les aînés en résidence
 date: 05/05/2020
 authors: seb
 institution: UQAM
-level: 3
-ihm: 
+level: 2
 user: 4
 io: 
 ia: 
 techno: 
 gl: 2
 link: 
-enseignement: INF600G - Conception de Logiciels Adaptés
+enseignement: INF600G
 tags: [bigl]
-type: sujet
+num: 6
+type: sujet de projet
 ---
 
 # Sujet d'étude : Un quiz pour les aînés en résidence.

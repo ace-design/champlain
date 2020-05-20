@@ -1,11 +1,63 @@
-{% assign supportscours = site.supportscours | sort: 'date' | reverse %}
-{% assign year = 2000 %}
+{% assign materielsdecours = site.supportscours %}
 
-<div class="support">    
-    {% for item in supportscours %}
+
+{% assign sujetdeprojet = materielsdecours | where: 'type',"sujet de projet" | sort: 'date' | reverse %}
+{% assign year = 2000 %}
+<div class="support">
+    <h1>Sujets de projet</h1>
+    {% for item in sujetdeprojet %}
     {% assign current_year = item.date | date: "%Y" %}
+    {% assign next_year = item.date | date: "%Y" | plus: '1' %}
     {% if year != current_year  %} 
-    <h1>{{ current_year }}</h1>
+    <h1>{{ current_year }} - {{ next_year }}</h1>
+    {% assign year = current_year %}
+    {% endif %}
+    
+    <div class="support-teaser">
+        <span>
+            <header>
+                <h1><a href="{{ item.url | relative_url }}">{{ item.title }}</a></h1>
+                {% include support_info.html item=item %}
+            </header>
+        </span>
+    </div>
+    {% endfor %}
+</div>
+
+
+{% assign evaluation = materielsdecours | where: 'type',"evaluation" | sort: 'date' | reverse %}
+{% assign year = 2000 %}
+<div class="support">
+    <h1>Evaluations</h1>
+    {% for item in evaluation %}
+    {% assign current_year = item.date | date: "%Y" %}
+    {% assign next_year = item.date | date: "%Y" | plus: '1' %}
+    {% if year != current_year  %} 
+    <h1>{{ current_year }} - {{ next_year }}</h1>
+    {% assign year = current_year %}
+    {% endif %}
+    
+    <div class="support-teaser">
+        <span>
+            <header>
+                <h1><a href="{{ item.url | relative_url }}">{{ item.title }}</a></h1>
+                {% include support_info.html item=item %}
+            </header>
+        </span>
+    </div>
+    {% endfor %}
+</div>
+
+
+{% assign supportsdecours = materielsdecours | where: 'type',"support de cours" | sort: 'date' | reverse %}
+{% assign year = 2000 %}
+<div class="support">
+    <h1>Supports de cours</h1>
+    {% for item in supportsdecours %}
+    {% assign current_year = item.date | date: "%Y" %}
+    {% assign next_year = item.date | date: "%Y" | plus: '1' %}
+    {% if year != current_year  %} 
+    <h1>{{ current_year }} - {{ next_year }}</h1>
     {% assign year = current_year %}
     {% endif %}
     

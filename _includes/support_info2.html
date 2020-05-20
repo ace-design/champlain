@@ -1,28 +1,16 @@
 {% assign item = include.item %}
 
 <div class="support-info">
-    <p class="souslabel">{{ item.etudiants }}</p>
-
-    {%- if item.institution -%}
-    {% assign inst = site.data.authors | where: "id",item.institution | first %}
-    {%- if inst.url -%}<a href="{{ inst.url | relative_url }}" target="_blank">{%- endif -%}
-        {% if inst.logo  %}<img src="{{ inst.logo | relative_url }}">{% endif %}
-        {%- if inst.url -%}</a>{%- endif -%}
-    {%- if item.composante -%}
-        <p class="souslabel">{{ item.composante }}</p>
-    {%- endif -%}
-    {%- endif -%}
-</div>
-
-
-<div class="support-info">
-    {%- if item.level -%}
-    <p class="label">Niveau</p>
-    <p class="souslabel">Cycle {{ item.level }}</p>
-    {%- endif -%}
+    {% assign authors = item.authors  | split: ", " %}
+    {% for author in authors %}
+    {% assign auteur = site.data.authors | where: "id",author | first %}
+    {%- if auteur.url -%}<a href="{{ auteur.url | relative_url }}" target="_blank">{%- endif -%}
+        {% if auteur.avatar  %}<img src="{{ auteur.avatar | relative_url }}">{% endif %}
+        {%- if auteur.url -%}</a>{%- endif -%}
+    {% endfor %}
 
     {%- if item.ipm or item.ia or item.gl or item.user or item.io or item.techo -%}
-    <p class="label" style="padding-left: 1.7em">Domaines de compétence visés</p>
+    <p class="label" style="padding-left: 0.2em">Domaines de compétence visés</p>
     {%- if item.ipm -%}<p class="souslabel"><span class="infobulle" aria-label="Intéractions Personne-Machine">IPM</span></p>{%- endif -%}
     {%- if item.ia -%}<p class="souslabel"><span class="infobulle" aria-label="Intelligence Artificielle">IA</span></p>{%- endif -%}
     {%- if item.gl -%}<p class="souslabel"><span class="infobulle" aria-label="Génie Logiciel">GL</span></p>{%- endif -%}

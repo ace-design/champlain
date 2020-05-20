@@ -13,14 +13,20 @@
 {%- if item.institution -%}
 <div class="enseignement-info">
     <p class="label">Institution</p>
-    <p class="souslabel">{{ item.institution }}</p>
+    {% assign inst = site.data.authors | where: "id",item.institution | first %}
+    {%- if inst.url -%}<a href="{{ inst.url | relative_url }}" target="_blank">{%- endif -%}
+        <p class="souslabel">{{ inst.name }}</p>
+    {%- if inst.url -%}</a>{%- endif -%}
+    {%- if item.composante -%}
+    <p class="souslabel">{{ item.composante }}</p>
+    {%- endif -%}
 </div>
 {%- endif -%}
 {%- if item.enseignement -%}
 <div class="enseignement-info">
     <p class="label">Enseignement</p>
     {%- for enseignement in site.enseignements -%}
-    {%- if enseignement.title == page.enseignement -%}
+    {%- if enseignement.sigle == page.enseignement -%}
     <p class="souslabel"><a aria-label="{{ enseignement.title }}" href="{{ enseignement.url || relative_url }}">
             {{ enseignement.title }}
         </a></p>
@@ -32,7 +38,7 @@
 {%- if item.level -%}
 <div class="enseignement-info">
     <p class="label">Niveau</p>
-    <img class="niveau" src="{{ site.url }}/assets/img/pourcentages/{{ item.level }}.jpg">
+    <p class="souslabel">Cycle {{ item.level }}</p>
 </div>
 {%- endif -%}
 

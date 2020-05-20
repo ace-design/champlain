@@ -19,22 +19,22 @@
   url: "https://www.linkedin.com/in/mireille-blay-fornarino-0663554?originalSubdomain=fr"
   institution: UCA
   short: Professeur des Universités et Directrice du département Informatique de l’IUT.
-- id: uca
+- id: UCA
   name: Université Côté d'Azur
   position: institution
   logo: "assets/img/avatars/uca.png"
   url: "http://univ-cotedazur.fr/fr#.Xr2eKWgzZPY"
-- id: uqam
+- id: UQAM
   name: Université du Québec à Montréal
   position: institution
   logo: "assets/img/avatars/uqam.png"
   url: "https://uqam.ca/"
-- id: frqnt
+- id: FRQNT
   name: Fonds de recherche Nature et technologies
   position: institution
   logo: "assets/img/avatars/FRQNT.png"
   url: "http://www.frqnt.gouv.qc.ca/en/accueil"
-- id: mae
+- id: MAE
   name: Ministère des Affaires Étrangères Français 
   position: institution
   logo: "assets/img/avatars/mae.png"

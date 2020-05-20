@@ -6,15 +6,16 @@ title: "PolyQuiz : Quiz pour population vieillissante"
 date: 01/2020
 
 authors: amd
-institution: UCA  Polytech
+institution: UCA
+composante: Polytech 
 
-level: 3
-ihm: 4
+level: 2
+ipm: 4
 user: 4
 techno: 5
 gl: 2
 
-enseignement: "EIIN615 Projet semestre 6"
+enseignement: EIIN615
 tags: [si3,projet]
 type: sujet de projet
 

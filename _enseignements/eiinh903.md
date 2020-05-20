@@ -2,14 +2,16 @@
 
 layout: enseignement
 
-title: "EIIN615 et EEIN616  : Interfaces tactiles et interfaces réparties sur plusieurs supports"
+sigle: EIIN615 et EEIN616
+title: Interfaces tactiles et interfaces réparties sur plusieurs supports
 date: September 2019
 
 authors: amd
-institution: UCA Polytech Nice Sophia
+institution: UCA
+composante: Polytech 
 
-level: 5
-ihm: 5
+level: 2
+ipm: 5
 user: 5
 gl: 2
 

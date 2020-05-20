@@ -65,7 +65,7 @@ header {
         padding-bottom: 0.5em;
         text-align: left;
     }
-    
+
     h1 {
         font-size: 2em;
     }
@@ -145,6 +145,8 @@ header {
 /* --- Supports de cours --- */
 
 .support {
+    padding: 1em;
+
     .support-teaser {
         width: 100%;
         margin-bottom: 0;
@@ -274,4 +276,11 @@ header {
     /* pour s'afficher au dessus des éléments en position relative */
     white-space: nowrap;
     /* on interdit le retour à la ligne */
+}
+
+p.heading {
+    margin-bottom: 0.2em;
+    a {
+        font-size: 1.3em;
+    }
 }

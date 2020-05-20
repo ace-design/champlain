@@ -4,17 +4,17 @@ title: Analyse d'article scientifique
 date: 05/05/2020
 authors: seb
 institution: UQAM
-level: 3
-ihm: 
+level: 2
 user: 5
 io: 
 ia: 
 techno: 
 gl: 
 link: 
-enseignement: INF600G - Conception de Logiciels Adaptés
+enseignement: INF600G
 tags: [bigl]
-type: sujet
+num: 5
+type: sujet de projet
 ---
 
 ## Objectifs

@@ -5,7 +5,7 @@ layout: default
 <article {% if page.feature-img or page.color %}class="feature-image" {% endif %}>
     <header id="main" style="">
         {% unless page.hide_title %}
-        <h1 class="title">{{ page.title }}</h1>
+        <h1 class="title">{{ page.sigle }} - {{ page.title }}</h1>
         {% include enseignement_content.html item=page %}
         {% endunless %}
     </header>
@@ -17,41 +17,63 @@ layout: default
 
 
     <h2>Supports de cours</h2>
-    {% assign supportscours = site.supportscours | sort: 'date' | reverse %}
+    {% assign supportscours = site.supportscours | where: 'enseignement', page.sigle | sort: 'date' | reverse %}
 
-    {%- for item2 in supportscours -%}
-    {%- if item2.enseignement == page.title -%}
     <div class="support">
+        {%- for item2 in supportscours -%}
         <div class="support-teaser">
             <span>
                 <header>
                     <h1><a href="{{ item2.url | relative_url }}">{{ item2.title }}</a></h1>
-                    {% include support_info.html item=item2 %}
+                    {% include support_info2.html item=item2 %}
                 </header>
             </span>
         </div>
+        {%- endfor -%}
     </div>
-    {%- endif -%}
-    {%- endfor -%}
 
 
-    <h2>Travaux étudiants</h2>
-    {% assign travauxetudiants = site.travauxetudiants | sort: 'date' | reverse %}
-
-    {%- for item3 in travauxetudiants -%}
-    {%- if item3.enseignement == page.title -%}
-    <span>
-        <header>
-            <h3>
-                <a aria-label="{{ item3.title }}" href="{{ item3.url | relative_url }}">
-                    {{ item3.title }}
-                </a>
-            </h3>
-            {%- include travauxetudiants_info.html item = item3 -%}
+    <h2>Test timeline</h2>
+    <div class="timeline">
+        <header class="timeline-header">
+            <span class="tag is-medium is-primary">Start</span>
         </header>
-    </span>
-    {%- endif -%}
-    {%- endfor -%}
+
+        {% assign supportscours = site.supportscours | where: 'enseignement', page.sigle | sort: 'num' %}
+
+
+        {%- for item2 in supportscours -%}
+        
+        {% if item2.type == "sujet de projet" %}
+        {% assign type = "is-warning" %}
+        {% assign icone = "fa-flag" %}
+        {% endif %}
+        {% if item2.type == "evaluation" %}
+        {% assign type = "is-danger" %}
+        {% assign icone = "fa-flag" %}
+        {% endif %}
+        {% if item2.type == "support de cours" %}
+        {% assign type = "is-primary" %}
+        {% assign icone = "fa-flag" %}
+        {% endif %}
+
+        <div class="timeline-item {{ type }}" style="padding: 0">
+            <div class="timeline-marker {{ type }} is-icon"><i class="fa {{ icone }}"></i></div>
+            <div class="timeline-content">
+                <div class="support-teaser">
+                    <p class="heading"><a href="{{ item2.url | relative_url }}">{{ item2.title }}</a></p>
+                    {% include support_info2.html item=item2 %}
+                </div>
+            </div>
+        </div>
+
+        {%- endfor -%}
+        <header class="timeline-header">
+            <span class="tag is-medium is-primary">End</span>
+        </header>
+    </div>
+
+
 
     <!-- Social media shares -->
     {% include share_buttons.html %}

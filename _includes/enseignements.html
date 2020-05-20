@@ -4,15 +4,16 @@
 <div class="enseignement">
     {% for enseignement in enseignements %}
     {% assign current_year = enseignement.date | date: "%Y" %}
+    {% assign next_year = enseignement.date | date: "%Y" | plus: '1' %}
     {% if year != current_year  %} 
-    <h1>{{ current_year }}</h1>
+    <h1>{{ current_year }} - {{ next_year }}</h1>
     {% assign year = current_year %}
     {% endif %}
     
     <div class="enseignement-teaser">
         <span>
             <header>
-                <h1><a href="{{ enseignement.url | relative_url }}">{{ enseignement.title }}</a></h1>
+                <h1><a href="{{ enseignement.url | relative_url }}">{{ enseignement.sigle }} - {{ enseignement.title }}</a></h1>
                 {% include enseignement_info.html item=enseignement %}
             </header>
         </span>

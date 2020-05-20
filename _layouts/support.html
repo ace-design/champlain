@@ -11,9 +11,30 @@ layout: default
     </header>
     
     {{ content }}
+    
+    
     {% if page.link %}
-        <a href="{{ page.link }}">Lien externe vers le support</a>
+        <p style="text-align: center"><a href="{{ page.link }}">Lien externe vers le support</a></p>
     {% endif %}
+    
+    
+    {% assign travauxetudiants = site.travauxetudiants | where: 'sujet',page.title | sort: 'date' | reverse %}
+    {% assign taille = travauxetudiants | size %}
+    
+    {% if page.type == "sujet de projet" and taille > 0 %} 
+    <h2>Exemples travaux étudiants</h2>
+    {%- for item3 in travauxetudiants -%}    
+    <span>
+        <header>
+            <h3>
+                <a aria-label="{{ item3.title }}" href="{{ item3.url | relative_url }}">
+                    {{ item3.title }}
+                </a>
+            </h3>
+            {%- include travauxetudiants_info.html item = item3 -%}
+        </header>
+    </span>    {%- endfor -%}
+    {%- endif -%}
 
     <!-- Social media shares -->
     {% include share_buttons.html %}
