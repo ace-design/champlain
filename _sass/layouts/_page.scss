@@ -1,26 +1,42 @@
 h1.title {
-  @extend .header-txt-shadow;
-  padding: $title-padding 0;
+    @extend .header-txt-shadow;
+    padding: $title-padding 0;
 }
 
 .subtitle {
-  font-weight: normal;
-  margin-top: 5px;
-  text-shadow: 1px 1px 2px $text-shadow;
+    font-weight: normal;
+    margin-top: 5px;
+    text-shadow: 1px 1px 2px $text-shadow;
 }
 
 .row {
-  display: flex;
-  flex-wrap: wrap;
+    display: flex;
+    flex-wrap: wrap;
 }
 
 .column {
-  flex: 50%;
+    flex: 50%;
 
-  img {
-    width: 100%;
-    min-width: 250px;
-  }
+    img {
+        width: 100%;
+        min-width: 250px;
+    }
 }
 
-//Shared css in _post.scss
+#backtop {
+    font-size: 2em;
+    position: fixed;
+    color: $text-color;
+    background: rgba(0,0,0,0);
+    padding: 12px;
+    padding-left: 25px;
+    padding-right: 25px;
+    right: 40px;
+    bottom: 40px;
+    border-radius: 100%;
+}
+
+#backtop:hover {
+    cursor: pointer;
+    background: rgba(0,0,0,0.1);
+}
