@@ -2,16 +2,25 @@ Ce site présente le projet Formation en Génie Logiciel pour le développement 
 
 
 
-## Comment administrer le site ?
+# Comment administrer le site ?
 
-### Niveau : rajouter des données  
+## Niveau 1 : rajouter des données 
 
-#### Les news 
+### Les news 
 
-//TODO 
+Chaque news correspond à un fichier .md du dossier _posts/ 
+La cartouche d'une news doit à minima contenir :
+* layout : post
+* title 
+* author : qui correspond à l'id d'un des authors spécifiés dans le fichier _data/authors.yml
+* tags : par exemple [News, Site web]
+* excerpt_separator : <!--more--> 
+
+La news est décrite dans le fichier markdown. Au bout de quelques lignes, il faut ajouter le signe <!--more-->. Lorsque la news est affichée sur la page d'accueil, seul le texte avant le <!--more--> est affiché. Lorsque l'on consulte la liste des news, tout le texte est affiché. 
 
 
-#### L'équipe 
+
+### L'équipe 
 
 Tous les membres de l'équipe sont décrits dans le fichier _data/authors.yml
 Il y a, pour le moment, trois types de membres de l'équipe : 
@@ -19,7 +28,7 @@ Il y a, pour le moment, trois types de membres de l'équipe :
 * les institutions impliquées dans le projet, dont la position est "institution"
 * les intervenants, dont la position est "intervenant" 
 
-##### Les chercheurs principaux 
+#### Les chercheurs principaux 
 
 On doit renseigner :
 * name 
@@ -28,14 +37,14 @@ On doit renseigner :
 * institution 
 * short : une courte description 
 
-##### Les institutions  
+#### Les institutions  
 
 On doit renseigner :
 * name 
 * logo 
 * url : un lien externe vers le site de l'institution 
 
-##### Les intervenants 
+#### Les intervenants 
 
 On doit renseigner :
 * name 
@@ -45,15 +54,19 @@ On doit renseigner :
 
 
 
-#### Les compétences 
+### Les compétences 
 
 Toutes les compétences sont décrites dans le fichier _data/competences.yml
-Chacune d'entre elles est composée de trois éléments : un nom (name), une courte description (short) et une image représentative (image). 
+Chacune d'entre elles est composée de trois éléments : 
+* name 
+* short : une courte description 
+* image
 
 Elles sont affichées dans la page de l'équipe. 
 
 
-#### Les enseignements 
+
+### Les enseignements 
 
 Chaque enseignement correspond à un fichier .md du dossier _enseignements/ 
 La cartouche d'un enseignement doit à minima contenir :
@@ -79,7 +92,8 @@ On peut y rajouter les cartouches suivantes :
 Il est possible de décrire l'enseignement dans le fichier markdown en utilisant, si voulu, du html. 
 
 
-#### Les matériels de cours  
+
+### Les matériels de cours  
 
 Chaque matériels de cours correspond à un fichier .md du dossier _supportscours/ 
 La cartouche d'un matériel de cours doit à minima contenir :
@@ -107,7 +121,8 @@ On peut y rajouter les cartouches suivantes :
 Il est possible de décrire le matériel de cours dans le fichier markdown en utilisant, si voulu, du html. 
 
 
-#### Les travaux étudiants  
+
+### Les travaux étudiants  
 
 Chaque travail étudiant correspond à un fichier .md du dossier _travauxetudiants/ 
 La cartouche d'un travail étudiant doit à minima contenir :
@@ -134,8 +149,11 @@ Il est possible de décrire le travail dans le fichier markdown en utilisant, si
 
 
 
-###  Niveau 2 : modifier le style du site 
+##  Niveau 2 : modifier le style du site 
 
 
+
+
+## Niveau 3 : modifier la structure 
 
 
