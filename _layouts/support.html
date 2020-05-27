@@ -10,38 +10,43 @@ layout: default
         {% unless page.hide_title %}
         <h1 class="title">{{ page.title }}</h1>
         {% include support_content.html item=page %}
-        
-        
-        {% if page.type == "sujet de projet" and taille > 0 %} 
+
+
+        {% if page.type == "projet" and taille > 0 %}
         <div class="enseignement-info">
             <p class="label"><a href="#travaux">Accéder aux travaux des étudiants</a></p>
         </div>
         {%- endif -%}
-        
-        
+
+
         {% endunless %}
     </header>
-    
+
     {{ content }}
-    
-    
+
+
     {% if page.link %}
-        <p style="text-align: center"><a href="{{ page.link }}">Lien externe vers le support</a></p>
+    <p style="text-align: center"><a href="{{ page.link }}">Lien externe vers le support</a></p>
     {% endif %}
-    
-    {% if page.type == "sujet de projet" and taille > 0 %} 
+
+    {% if page.type == "projet" and taille > 0 %}
     <h2 id="travaux">Exemples travaux étudiants</h2>
-    {%- for item3 in travauxetudiants -%}    
-    <span>
-        <header>
-            <h3>
-                <a aria-label="{{ item3.title }}" href="{{ item3.url | relative_url }}">
-                    {{ item3.title }}
-                </a>
-            </h3>
-            {%- include travauxetudiants_info.html item = item3 -%}
-        </header>
-    </span>    {%- endfor -%}
+    <div class="support">
+        {%- for item3 in travauxetudiants -%}
+        <div class="support-teaser">
+            <span>
+                <header>
+                    <h3>
+                        <a aria-label="{{ item3.title }}" href="{{ item3.url | relative_url }}">
+                            {{ item3.title }}
+                        </a>
+                    </h3>
+                    {%- include travauxetudiants_info.html item = item3 -%}
+                </header>
+            </span>
+        </div>
+        {%- endfor -%}
+    </div>
     {%- endif -%}
 
     <!-- Social media shares -->

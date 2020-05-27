@@ -31,15 +31,15 @@ layout: default
 
         {%- for item2 in supportscours -%}
 
-        {% if item2.type == "sujet de projet" %}
+        {% if item2.type == "projet" %}
         {% assign type = "is-warning" %}
         {% assign icone = "fa-pencil" %}
         {% endif %}
-        {% if item2.type == "evaluation" %}
+        {% if item2.type == "eval" %}
         {% assign type = "is-danger" %}
         {% assign icone = "fa-graduation-cap" %}
         {% endif %}
-        {% if item2.type == "support de cours" %}
+        {% if item2.type == "support" %}
         {% assign type = "is-primary" %}
         {% assign icone = "fa-book" %}
         {% endif %}

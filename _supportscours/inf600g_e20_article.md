@@ -14,7 +14,7 @@ link:
 enseignement: INF600G
 tags: [bigl]
 num: 5
-type: sujet de projet
+type: projet
 ---
 
 ## Objectifs

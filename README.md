@@ -63,8 +63,9 @@ La cartouche d'un matériel de cours doit à minima contenir :
 * title
 * date 
 * authors (séparés par une virgule s'il y en a plusieurs, et correspondant aux id des authors spécifiés dans le fichier _data/authors.yml)
-* enseignement (l'enseignement dans lequel ce support a été utilisé)
-* type (sujet de projet, evaluation ou support de cours)
+* enseignement (le sigle de l'enseignement dans lequel ce support a été utilisé)
+* type (projet, eval ou support) 
+* num (le numéro du matériel dans le cours)
 
 On peut y rajouter les cartouches suivantes : 
 * level (soit 1, soit 2, qui correspond au cycle d'étude)
@@ -88,7 +89,7 @@ La cartouche d'un travail étudiant doit à minima contenir :
 * title
 * date 
 * etudiants (séparés par une virgule s'il y en a plusieurs)
-* sujetdeprojet (le sujet de projet du travail)
+* sujetdeprojet (le nom du sujet de projet du travail)
 
 On peut y rajouter les cartouches suivantes : 
 * level (soit 1, soit 2, qui correspond au cycle d'étude)

@@ -18,7 +18,7 @@ gl: 2
 enseignement: EIIN615
 tags: [si3,projet]
 num: 1
-type: sujet de projet
+type: projet
 
 ---
 

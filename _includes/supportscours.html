@@ -7,7 +7,7 @@
 </div>
 
 
-{% assign sujetdeprojet = materielsdecours | where: 'type',"sujet de projet" | sort: 'date' | reverse %}
+{% assign sujetdeprojet = materielsdecours | where: 'type',"projet" | sort: 'date' | reverse %}
 {% assign year = 2000 %}
 {% assign type = "is-warning" %}
 {% assign icone = "fa-pencil" %}
@@ -40,7 +40,7 @@
 
 
 
-{% assign evaluation = materielsdecours | where: 'type',"evaluation" | sort: 'date' | reverse %}
+{% assign evaluation = materielsdecours | where: 'type',"eval" | sort: 'date' | reverse %}
 {% assign year = 2000 %}
 {% assign type = "is-danger" %}
 {% assign icone = "fa-graduation-cap" %}
@@ -72,7 +72,7 @@
 </div>
 
 
-{% assign supportsdecours = materielsdecours | where: 'type',"support de cours" | sort: 'date' | reverse %}
+{% assign supportsdecours = materielsdecours | where: 'type',"support" | sort: 'date' | reverse %}
 {% assign year = 2000 %}
 {% assign type = "is-primary" %}
 {% assign icone = "fa-book" %}

@@ -21,9 +21,9 @@ layout: default
         <p>Dans ce contexte, le principal défi à relever est la mise en place de cours de formation interdisciplinaires qui mêlent les différentes compétences impliquées dans le développement de telles applications . S’il est aisé d’enseigner séparément chacune des composantes nécessaires à ce type de développement, l’intégration de toutes ces compétences pour produire des applications adaptées aux aînés est plus complexe que la somme de ses parties. Par exemple, la prise en compte de l’utilisateur peut être enseignée dans des modules dédiés au développement agile, et l’ergonomie des interfaces personnes-machines peut elle aussi être enseignée dans un module séparé. Mais pour prendre en compte un utilisateur tel qu’une personne atteinte de la maladie d'Alzheimer, il est nécessaire d’utiliser des compétences spécifiques d’ergonomie (basée sur des capacités de mémoire à court terme disparaissantes et à long terme amplifiées) pour le développement de ces applications. De même, il est nécessaire d’intégrer à ce développement une prise en compte des soignants, de la famille du patient, en plus du patient lui-même . En considérant le seul problème de la maladie d’Alzheimer (parmi les autres problèmes cognitifs reconnus dans le cadre d’une population vieillissante), la société Alzheimer Canada recense 564,000 patients diagnostiqués en 2018 et anticipe un doublement de cette population d’ici 15 ans.</p>
 
         <p>Il n’existe pas à notre connaissance de programme de formation en informatique (au 1 er et 2 ème cycle) qui prennent en compte comme une préoccupation de première importance ce type de population. Nous défendons qu’il est nécessaire de sensibiliser les étudiants (aux trois cycles) à la prise en compte du vieillissement de la population , par la définition de modules de cours réutilisables qui pourront être utilisés au sein de l’UNS, de l’UQAM, mais aussi d’autres établissements universitaires. Cette proposition de projet s’appuie sur les expertises de recherche et d’enseignement des professeurs de l’UQAM en intelligence artificielle et en systèmes logiciels, couplé à l’expertise en enseignement de la prise en compte du handicap (visuel et cognitif) développée depuis 15 ans au sein d’UNS.</p>
-        
+
         <p>Ce texte est temporaire.</p>
-        
+
         <p><i>Plus d'informations sur la proposition de ce projet <a href="{{ site.url }}/assets/documents/2019_champlain_consortium.pdf">ici</a> et <a href="{{ site.url }}/assets/documents/2019_champlain_projet.pdf">ici</a>.</i></p>
     </section>
 
@@ -48,6 +48,42 @@ layout: default
             <h2>Publier une plateforme web participative</h2>
             <p>du matériel de cours pour permettre la mise à disposition des cours, des bonnes pratiques et des retours d’expérience de mise en oeuvre de ces cours.</p>
         </div>
+    </section>
+
+
+    
+    
+    {% assign enseignements = site.enseignements %}
+    {% assign nbenseignements = enseignements | size %}
+    {% assign supports = site.supportscours %}
+    {% assign nbsupports = supports | size %}
+    {% assign travauxetudiants = site.travauxetudiants %}
+    {% assign nbtravaux = travauxetudiants | size %}
+
+    <section class="souspartie">
+        <h1>Quelques chiffres</h1>
+
+        <div class="row">
+            <div class="col-md-4 memberbox" style="border: none">
+                <div class="media">
+                    <img class="media-object member-photo" style="border-radius: 0" src="{{ site.url }}/assets/img/icones/enseignement.png">
+                    <h3 style="text-align: center">{{ nbenseignements }} enseignements</h3>
+                </div>
+            </div>
+            <div class="col-md-4 memberbox" style="border: none">
+                <div class="media">
+                    <img class="media-object member-photo" style="border-radius: 0" src="{{ site.url }}/assets/img/icones/livre.jpg">
+                    <h3 style="text-align: center">{{ nbsupports }} matériels de cours</h3>
+                </div>
+            </div>
+            <div class="col-md-4 memberbox" style="border: none">
+                <div class="media">
+                    <img class="media-object member-photo" style="border-radius: 0" src="{{ site.url }}/assets/img/icones/stylo.jpg">
+                    <h3 style="text-align: center">{{ nbtravaux }} travaux étudiants</h3>
+                </div>
+            </div>
+        </div>
+        
     </section>
 
 

@@ -14,7 +14,7 @@ link:
 enseignement: INF600G
 tags: [bigl]
 num: 6
-type: sujet de projet
+type: projet
 ---
 
 # Sujet d'étude : Un quiz pour les aînés en résidence.

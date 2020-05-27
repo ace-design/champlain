@@ -2,7 +2,7 @@
 layout: travail
 title: Travail 1 
 date: 27 September 2015
-etudiants: Alison Lecuyer, Inconnu 
+etudiants: Alison Lecuyer, Un autre étudiant 
 institution: UCA
 composante: IUT de Nice
 level: 1

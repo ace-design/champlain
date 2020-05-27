@@ -15,7 +15,7 @@ link: https://github.com/ace-lectures/E20-INF600G/blob/master/cours/seq1/Seq1_Pa
 enseignement: INF600G
 tags: [bigl]
 num: 7
-type: evaluation
+type: eval
 ---
 
 ## Contenu 
