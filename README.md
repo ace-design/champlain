@@ -4,109 +4,137 @@ Ce site présente le projet Formation en Génie Logiciel pour le développement 
 
 ## Comment administrer le site ?
 
-### Les news 
+### Niveau : rajouter des données  
+
+#### Les news 
 
 //TODO 
 
 
-### L'équipe 
+#### L'équipe 
 
 Tous les membres de l'équipe sont décrits dans le fichier _data/authors.yml
 Il y a, pour le moment, trois types de membres de l'équipe : 
-* les membres principaux de l'équipe, dont la position est "equipe". Pour ces membres, on doit y renseigner le nom (name), l'avatar (avatar), une url externe si voulu (url), l'institution (institution) et une courte description (short). 
-* les institutions impliquées dans le projet, dont la position est "institution". On doit ajouter le nom de l'institution (name), le logo (logo) et une url externe si voulu (url).
-* les intervenants, dont tla position est "intervenant". Pour eux, il faut entrer le nom (name), d'où vient cet intervenant (institution), la date de l'intervention (date), et sa contribution (contribution). 
-    
-Les paramètres de la page de l'équipe peuvent être modifiés dans le fichier pages/aequipe.html. On peut notamment y modifier le titre de la page et l'image du header. 
-Le contenu de la page peut être modifié dans le fichier _includes/equipe.html
-Enfin, le style de la page peut être modifié dans le fichier _sass/includes/_equipe.scss. 
+* les chercheurs principaux de l'équipe, dont la position est "equipe"
+* les institutions impliquées dans le projet, dont la position est "institution"
+* les intervenants, dont la position est "intervenant" 
+
+##### Les chercheurs principaux 
+
+On doit renseigner :
+* name 
+* avatar : cet avatar doit forcément être carré 
+* url : un lien externe vers le profil (github, linkedin, site web perso...)
+* institution 
+* short : une courte description 
+
+##### Les institutions  
+
+On doit renseigner :
+* name 
+* logo 
+* url : un lien externe vers le site de l'institution 
+
+##### Les intervenants 
+
+On doit renseigner :
+* name 
+* institution : d'où vient cet intervenant 
+* date : la date de l'intervention 
+* contribution : qu'est-ce qu'il a fait pour ce projet ? 
 
 
-### Les compétences 
+
+#### Les compétences 
 
 Toutes les compétences sont décrites dans le fichier _data/competences.yml
 Chacune d'entre elles est composée de trois éléments : un nom (name), une courte description (short) et une image représentative (image). 
 
-Elles sont affichées dans la page d'accueil, home. Cet affichage peut être modifié dans _layouts/home.html 
+Elles sont affichées dans la page de l'équipe. 
 
 
-### Les enseignements 
+#### Les enseignements 
 
 Chaque enseignement correspond à un fichier .md du dossier _enseignements/ 
 La cartouche d'un enseignement doit à minima contenir :
 * layout : enseignement
 * sigle 
 * title
-* date (l'année de début de l'enseignement, 2019 si l'enseignement s'est déroulé pendant l'année 2019-2020)
-* authors (séparés par une virgule s'il y en a plusieurs, et correspondant aux id des authors spécifiés dans le fichier _data/authors.yml)
+* date : l'année de début de l'enseignement (2019 si l'enseignement s'est déroulé pendant l'année 2019-2020)
+* authors : séparés par une virgule s'il y en a plusieurs, et correspondant aux id des authors spécifiés dans le fichier _data/authors.yml
 
 On peut y rajouter les cartouches suivantes : 
-* level (soit 1, soit 2, qui correspond au cycle d'étude)
-* institution (qui correspond à l'id d'une instution dans le fichier _data/authors.yml, uca ou uqam)
-* composante 
-* link (qui correpond au lien externe de l'enseignement)
-* ihm (un entier entre 1 et 5 qui représente à quel point on a abordé la compétence Intéractions Homme-Machine dans cet enseignement)
-* user (un entier entre 1 et 5 qui représente à quel point on a abordé la compétence Prise en compte de l'utilisateur dans cet enseignement)
-* ia (un entier entre 1 et 5 qui représente à quel point on a abordé la compétence Intelligence Artificielle dans cet enseignement)
-* io (un entier entre 1 et 5 qui représente à quel point on a abordé la compétence Internet des Objets dans cet enseignement)
-* gl (un entier entre 1 et 5 qui représente à quel point on a abordé la compétence Génie Logiciel dans cet enseignement)
-* techno (un entier entre 1 et 5 qui représente à quel point on a abordé la compétence Technologies dans cet enseignement)
+* level : soit 1, soit 2, soit 3 qui correspond au cycle d'étude
+* institution : qui correspond à l'id d'une instution dans le fichier _data/authors.yml, UCA ou UQAM 
+* composante : une chaîne de caractère (Polytech par exemple)
+* link : le lien externe pour accéder à l'enseignement 
+* ihm : un entier entre 1 et 5 qui représente à quel point on a abordé la compétence Intéractions Homme-Machine dans cet enseignement
+* user : un entier entre 1 et 5 qui représente à quel point on a abordé la compétence Prise en compte de l'utilisateur dans cet enseignement
+* ia : un entier entre 1 et 5 qui représente à quel point on a abordé la compétence Intelligence Artificielle dans cet enseignement
+* io : un entier entre 1 et 5 qui représente à quel point on a abordé la compétence Internet des Objets dans cet enseignement
+* gl : un entier entre 1 et 5 qui représente à quel point on a abordé la compétence Génie Logiciel dans cet enseignement
+* techno : un entier entre 1 et 5 qui représente à quel point on a abordé la compétence Technologies dans cet enseignement
+* tags : par exemple [bac +5, sigle]
     
 Il est possible de décrire l'enseignement dans le fichier markdown en utilisant, si voulu, du html. 
 
 
-### Les matériels de cours  
+#### Les matériels de cours  
 
 Chaque matériels de cours correspond à un fichier .md du dossier _supportscours/ 
 La cartouche d'un matériel de cours doit à minima contenir :
 * layout : support
 * title
 * date 
-* authors (séparés par une virgule s'il y en a plusieurs, et correspondant aux id des authors spécifiés dans le fichier _data/authors.yml)
-* enseignement (le sigle de l'enseignement dans lequel ce support a été utilisé)
-* type (projet, eval ou support) 
-* num (le numéro du matériel dans le cours)
+* authors : séparés par une virgule s'il y en a plusieurs, et correspondant aux id des authors spécifiés dans le fichier _data/authors.yml
+* enseignement : le sigle de l'enseignement dans lequel ce support a été utilisé
+* type : projet, eval ou support 
+* num : le numéro du matériel dans le cours
 
 On peut y rajouter les cartouches suivantes : 
-* level (soit 1, soit 2, qui correspond au cycle d'étude)
-* institution (qui correspond à l'id d'une instution dans le fichier _data/authors.yml, uca ou uqam)
-* link (qui correpond au lien externe du support de cours)
-* ihm (un entier entre 1 et 5 qui représente à quel point on a abordé la compétence Intéractions Homme-Machine dans ce support de cours)
-* user (un entier entre 1 et 5 qui représente à quel point on a abordé la compétence Prise en compte de l'utilisateur dans ce support de cours)
-* ia (un entier entre 1 et 5 qui représente à quel point on a abordé la compétence Intelligence Artificielle dans ce support de cours)
-* io (un entier entre 1 et 5 qui représente à quel point on a abordé la compétence Internet des Objets dans ce support de cours)
-* gl (un entier entre 1 et 5 qui représente à quel point on a abordé la compétence Génie Logiciel dans ce support de cours)
-* techno (un entier entre 1 et 5 qui représente à quel point on a abordé la compétence Technologies dans ce support de cours)
-    
+* level : soit 1, soit 2, soit 3 qui correspond au cycle d'étude
+* institution : qui correspond à l'id d'une instution dans le fichier _data/authors.yml, UCA ou UQAM 
+* composante : une chaîne de caractère (Polytech par exemple)
+* link : le lien externe pour accéder au matériel de cours  
+* ihm : un entier entre 1 et 5 qui représente à quel point on a abordé la compétence Intéractions Homme-Machine dans ce matériel de cours
+* user : un entier entre 1 et 5 qui représente à quel point on a abordé la compétence Prise en compte de l'utilisateur dans ce matériel de cours
+* ia : un entier entre 1 et 5 qui représente à quel point on a abordé la compétence Intelligence Artificielle dans ce matériel de cours
+* io : un entier entre 1 et 5 qui représente à quel point on a abordé la compétence Internet des Objets dans ce matériel de cours
+* gl : un entier entre 1 et 5 qui représente à quel point on a abordé la compétence Génie Logiciel dans ce matériel de cours
+* techno : un entier entre 1 et 5 qui représente à quel point on a abordé la compétence Technologies dans ce matériel de cours
+* tags : par exemple [bac +5, sigle]
+
 Il est possible de décrire le matériel de cours dans le fichier markdown en utilisant, si voulu, du html. 
 
 
-### Les travaux étudiants  
+#### Les travaux étudiants  
 
 Chaque travail étudiant correspond à un fichier .md du dossier _travauxetudiants/ 
 La cartouche d'un travail étudiant doit à minima contenir :
 * layout : travail
 * title
 * date 
-* etudiants (séparés par une virgule s'il y en a plusieurs)
-* sujetdeprojet (le nom du sujet de projet du travail)
+* etudiants : séparés par une virgule s'il y en a plusieurs
+* sujet : le nom du sujet de projet
 
 On peut y rajouter les cartouches suivantes : 
-* level (soit 1, soit 2, qui correspond au cycle d'étude)
-* institution (qui correspond à l'id d'une instution dans le fichier _data/authors.yml, uca ou uqam)
-* link (qui correpond au lien externe du travail étudiant)
-* ihm (un entier entre 1 et 5 qui représente à quel point on a abordé la compétence Intéractions Homme-Machine dans ce travail étudiant)
-* user (un entier entre 1 et 5 qui représente à quel point on a abordé la compétence Prise en compte de l'utilisateur dans ce travail étudiant)
-* ia (un entier entre 1 et 5 qui représente à quel point on a abordé la compétence Intelligence Artificielle dans ce travail étudiant)
-* io (un entier entre 1 et 5 qui représente à quel point on a abordé la compétence Internet des Objets dans ce travail étudiant)
-* gl (un entier entre 1 et 5 qui représente à quel point on a abordé la compétence Génie Logiciel dans ce travail étudiant)
-* techno (un entier entre 1 et 5 qui représente à quel point on a abordé la compétence Technologies dans ce travail étudiant)
-    
+* level : soit 1, soit 2, soit 3 qui correspond au cycle d'étude
+* institution : qui correspond à l'id d'une instution dans le fichier _data/authors.yml, UCA ou UQAM 
+* composante : une chaîne de caractère (Polytech par exemple)
+* link : le lien externe pour accéder au travail étudiant  
+* ihm : un entier entre 1 et 5 qui représente à quel point on a abordé la compétence Intéractions Homme-Machine dans ce travail étudiant
+* user : un entier entre 1 et 5 qui représente à quel point on a abordé la compétence Prise en compte de l'utilisateur dans ce travail étudiant
+* ia : un entier entre 1 et 5 qui représente à quel point on a abordé la compétence Intelligence Artificielle dans ce travail étudiant
+* io : un entier entre 1 et 5 qui représente à quel point on a abordé la compétence Internet des Objets dans ce travail étudiant
+* gl : un entier entre 1 et 5 qui représente à quel point on a abordé la compétence Génie Logiciel dans ce travail étudiant
+* techno : un entier entre 1 et 5 qui représente à quel point on a abordé la compétence Technologies dans ce travail étudiant
+* tags : par exemple [bac +5, sigle]
+
 Il est possible de décrire le travail dans le fichier markdown en utilisant, si voulu, du html. 
 
 
 
-
+###  Niveau 2 : modifier le style du site 
 
 
 
