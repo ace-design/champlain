@@ -4,7 +4,7 @@ Ce site présente le projet Formation en Génie Logiciel pour le développement 
 
 # Comment administrer le site ?
 
-## Niveau 1 : rajouter des données 
+## Niveau 1 : modifier des données 
 
 ### Les news 
 
