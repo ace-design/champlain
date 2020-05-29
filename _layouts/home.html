@@ -62,28 +62,13 @@ layout: default
 
     <section class="souspartie">
         <h1>Quelques chiffres</h1>
-
-        <div class="row">
-            <div class="col-md-4 memberbox" style="border: none">
-                <div class="media">
-                    <img class="media-object member-photo" style="border-radius: 0" src="{{ site.url }}/assets/img/icones/enseignement.png">
-                    <h3 style="text-align: center">{{ nbenseignements }} enseignements</h3>
-                </div>
-            </div>
-            <div class="col-md-4 memberbox" style="border: none">
-                <div class="media">
-                    <img class="media-object member-photo" style="border-radius: 0" src="{{ site.url }}/assets/img/icones/livre.jpg">
-                    <h3 style="text-align: center">{{ nbsupports }} matériels de cours</h3>
-                </div>
-            </div>
-            <div class="col-md-4 memberbox" style="border: none">
-                <div class="media">
-                    <img class="media-object member-photo" style="border-radius: 0" src="{{ site.url }}/assets/img/icones/stylo.jpg">
-                    <h3 style="text-align: center">{{ nbtravaux }} travaux étudiants</h3>
-                </div>
-            </div>
-        </div>
         
+        <ul style="list-style: none">
+            <li><h4><i class="fa fa-university"></i> {{ nbenseignements }} enseignements</h4></li>
+            <li><h4><i class="fa fa-book"></i> {{ nbsupports }} matériels de cours</h4></li>
+            <li><h4><i class="fa fa-edit"></i> {{ nbtravaux }} travaux étudiants</h4></li>
+        </ul>
+
     </section>
 
 
