@@ -148,6 +148,13 @@ On peut y rajouter les cartouches suivantes :
 Il est possible de décrire le travail dans le fichier markdown en utilisant, si voulu, du html. 
 
 
+### Ajouter des documents en local 
+
+Rajoutez vos documents dans le dossier /assets/documents. Eventuellement les ranger dans des dossiers (par exemple, tous les matériels de cours d'un même enseignement dans un dossier).
+Le lien vers ce fichier est : "{{ site.url }}/assets/documents/nomdudocument" 
+
+
+
 
 ##  Niveau 2 : modifier le style du site 
 
