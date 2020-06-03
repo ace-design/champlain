@@ -13,5 +13,5 @@ user: 4
 techno: 4
 ---
 
-La vidéo présente le traail des étudiants dans le cadre du projet PS6.
+La vidéo présente le travail des étudiants dans le cadre du projet PS6.
 Ce site devrait être utilisé par le centre d'accueil de jour Alzheimer de Biot. 
