@@ -6,7 +6,7 @@
     {% assign current_year = item.date | date: "%Y" %}
     {% assign next_year = item.date | date: "%Y" | plus: '1' %}
     {% if year != current_year  %} 
-    <h1>{{ current_year }} - {{ next_year }}</h1>
+    <h2>{{ current_year }} - {{ next_year }}</h2>
     {% assign year = current_year %}
     {% endif %}
     

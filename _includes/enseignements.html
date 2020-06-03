@@ -1,16 +1,16 @@
 {% assign enseignements = site.enseignements | sort: 'date' | reverse %}
 {% assign year = 2000 %}
 
-<div class="enseignement">
+<div class="support">
     {% for enseignement in enseignements %}
     {% assign current_year = enseignement.date | date: "%Y" %}
     {% assign next_year = enseignement.date | date: "%Y" | plus: '1' %}
     {% if year != current_year  %} 
-    <h1>{{ current_year }} - {{ next_year }}</h1>
+    <h2>{{ current_year }} - {{ next_year }}</h2>
     {% assign year = current_year %}
     {% endif %}
     
-    <div class="enseignement-teaser">
+    <div class="support-teaser">
         <span>
             <header>
                 <h1><a href="{{ enseignement.url | relative_url }}">{{ enseignement.sigle }} - {{ enseignement.title }}</a></h1>

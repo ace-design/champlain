@@ -1,0 +1,14 @@
+{% assign item=include.item %}
+
+{%- if item.level -%}
+    <p class="label">Niveau</p>
+    {% if item.level == 1 %}
+    <p class="souslabel">Licence/Bachelor</p>
+    {% endif %}
+    {% if item.level == 2 %}
+    <p class="souslabel">Master/Maîtrise</p>
+    {% endif %}
+    {% if item.level == 3 %}
+    <p class="souslabel">Doctorat</p>
+    {% endif %}
+{%- endif -%}

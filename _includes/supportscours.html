@@ -1,10 +1,19 @@
 {% assign materielsdecours = site.supportscours %}
 
+
+{% comment %} Menu relié aux ancres des différents types {% endcomment %}
+
+
 <div class="center-div">
     <a href="#sujetsdeprojet" class="bouton">Sujets de projet</a>
     <a href="#evaluations" class="bouton">Evaluations</a>
     <a href="#supportsdecours" class="bouton">Supports de cours</a>
 </div>
+
+
+
+
+{% comment %} Gestion des sujets de projet {% endcomment %}
 
 
 {% assign sujetdeprojet = materielsdecours | where: 'type',"projet" | sort: 'date' | reverse %}
@@ -40,6 +49,10 @@
 
 
 
+
+{% comment %} Gestion des évaluations {% endcomment %}
+
+
 {% assign evaluation = materielsdecours | where: 'type',"eval" | sort: 'date' | reverse %}
 {% assign year = 2000 %}
 {% assign type = "is-danger" %}
@@ -70,6 +83,11 @@
 
     {%- endfor -%}
 </div>
+
+
+
+
+{% comment %} Gestion des supports de cours {% endcomment %}
 
 
 {% assign supportsdecours = materielsdecours | where: 'type',"support" | sort: 'date' | reverse %}
