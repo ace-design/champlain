@@ -1,0 +1,21 @@
+---
+---
+[
+  {% for enseignement in site.enseignements %}
+  {
+    "title"    : "{{ enseignement.title | escape }}",
+    "sigle"    : "{{ enseignement.sigle | escape }}",
+    "auteurs" : "{{ enseignement.authors }}",
+    "composante" : "{{ enseignement.composante }}",
+    "level" : "{% if enseignement.level == 1 %}Licence/Bachelor{% endif %}{% if enseignement.level == 2 %}Master/Maîtrise{% endif %}{% if enseignement.level == 3 %}Doctorat{% endif %}",
+    "competences" : "{% if enseignement.ihm or enseignement.ia or enseignement.gl or enseignement.user or enseignement.io or enseignement.techo %}{% if enseignement.ihm %}Intéraction Homme-Machine ; {% endif %}{% if enseignement.user %}Prise en compte de l'utilisateur ; {% endif %}{% if enseignement.io %}Internet des objets ; {% endif %}{% if enseignement.gl %}Génie Logiciel ; {% endif %}{% if enseignement.ia %}Intelligence artificielle ; {% endif %}{% if enseignement.techno %}Technologies ; {% endif %}{% else %}Non renseigné{% endif %}",
+    "institution" : "{% if enseignement.institution %}{{ enseignement.institution }}{% else %}Non renseigné{% endif %}",
+    "composante" : "{% if enseignement.composante %}{{ enseignement.composante }}{% else %} {% endif %}",
+    "date"     : "{{ enseignement.date | date: "%B %-d, %Y" }}",
+    "tags"     : "{{ enseignement.tags | join: ', ' | prepend: " " }}",
+    "url" : "{{ enseignement.url | relative_url }}",
+    "excerpt"  : {{ enseignement.content | strip_html | truncate: '250' | jsonify }},
+    "content"  : {{ enseignement.content | strip_html | escape | jsonify }}
+} {% unless forloop.last %},{% endunless %}
+  {% endfor %}
+]

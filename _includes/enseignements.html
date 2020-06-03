@@ -1,6 +1,7 @@
 {% assign enseignements = site.enseignements | sort: 'date' | reverse %}
 {% assign year = 2000 %}
 
+
 <div class="support">
     {% for enseignement in enseignements %}
     {% assign current_year = enseignement.date | date: "%Y" %}
@@ -21,4 +22,6 @@
     {% endfor %}
 </div>
 
-{% include blog_nav.html %}
+
+
+

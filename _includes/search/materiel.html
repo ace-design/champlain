@@ -1,14 +1,10 @@
-{% assign travauxetudiants = site.travauxetudiants | sort: 'date' | reverse %}
-{% assign year = 2000 %}
-
 <div class="support">
-<h3><i class="fa fa-search"></i> Vous recherchez un travail étudiant ?</h3>
+<h3>Vous recherchez un matériel de cours ?</h3>
 <input type="text" id="search-input" placeholder="Entrez des mots clés..." class="search-bar">
 </div>
 <div class="support" style="padding-bottom: 0">
 <ul id="results-container" style="margin: 0"></ul>
 </div>
-
 
 <section>
     <!-- Script pointing to jekyll-search.js -->
@@ -18,7 +14,7 @@
         SimpleJekyllSearch({
             searchInput: document.getElementById('search-input'),
             resultsContainer: document.getElementById('results-container'),
-            json: '{{ "/assets/data/search_travaux.json" | relative_url }}',
+            json: '{{ "/assets/data/search_materiels.json" | relative_url }}',
             searchResultTemplate: '<div class="support-teaser"><span><header><h1><a href="{url}">{title}</a></h1><div class="support-info"><p class="label">Par</p><p class="souslabel">{auteurs}</p></div><div class="support-info"><p class="label">A</p><p class="souslabel">{institution}</p><p class="souslabel">{composante}</p></div><div class="support-info"><p class="label">Niveau</p><p class="souslabel">{level}</p></div><div class="support-info"><p class="label">Domaines de compétence visés</p><br/><p class="souslabel">{competences}</p></header></span></div>',
             noResultsText: 'No results found',
             limit: 10,
@@ -27,26 +23,3 @@
         })
     </script>
 </section>
-
-
-<div class="support">
-    {% for item in travauxetudiants %}
-    {% assign current_year = item.date | date: "%Y" %}
-    {% assign next_year = item.date | date: "%Y" | plus: '1' %}
-    {% if year != current_year  %} 
-    <h2>{{ current_year }} - {{ next_year }}</h2>
-    {% assign year = current_year %}
-    {% endif %}
-    
-    <div class="support-teaser">
-        <span>
-            <header>
-                <h1><a href="{{ item.url | relative_url }}">{{ item.title }}</a></h1>
-                {%- include travauxetudiants_info.html item = item -%}
-            </header>
-        </span>
-    </div>
-    {% endfor %}
-</div>
-
-{% include blog_nav.html %}
