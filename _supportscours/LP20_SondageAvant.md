@@ -12,7 +12,7 @@ composante: IUT Nice Côte d'Azur, département d'informatique
 level: 2
 
 enseignement: LP20
-links: "https://github.com/ace-design/champlain/tree/master/assets/documents/LP20/2019-2020 - Qui êtes-vous_ Génie Logiciel - Google Forms.pdf" "https://github.com/ace-design/champlain/tree/master/assets/documents/LP20/intro.pdf"
+links: "https://github.com/ace-design/champlain/blob/Mireille/assets/documents/LP20/2019-2020%20-%20Qui%20%C3%AAtes-vous_%20G%C3%A9nie%20Logiciel%20-%20Google%C2%A0Forms.pdf" "https://github.com/ace-design/champlain/blob/Mireille/assets/documents/LP20/Intro.pdf"
 tags: [sondage]
 num: 1,2
 type: support
