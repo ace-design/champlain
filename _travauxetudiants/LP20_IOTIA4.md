@@ -8,8 +8,8 @@ level: 2
 institution: UCA
 composante: IUT Nice Côte d'Azur, département d'informatique 
 link: https://youtu.be/nHq_HVwidqk
-ihm: 2
-user: 2
+ihm: 1
+user: 1
 techno: 2
 ---
 
