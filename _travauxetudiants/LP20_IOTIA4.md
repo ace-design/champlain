@@ -15,3 +15,6 @@ techno: 2
 
 La vidéo présente le travail des étudiants dans le cadre du projet _Quiz pour population vieillissante_.
 Cette video montre les premières briques de ce travail. 
+
+
+<iframe width="560" height="315" src="https://youtu.be/nHq_HVwidqk" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
