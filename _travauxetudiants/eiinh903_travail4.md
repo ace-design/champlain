@@ -12,7 +12,7 @@ user: 4
 techno: 4
 ---
 
-<iframe src="https://www.youtube.com/watch?v=cyYpSD4xbl8&feature=youtu.be" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
-
 La vidéo présente le travail des étudiants dans le cadre du projet PS6.
 Ce site devrait être utilisé par le centre d'accueil de jour Alzheimer de Biot. 
+
+<iframe width="560" height="315" src="https://www.youtube.com/embed/cyYpSD4xbl8" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
