@@ -7,7 +7,6 @@ sujet: "Quiz pour population vieillissante"
 level: 2
 institution: UCA
 composante: IUT Nice Côte d'Azur, département d'informatique 
-link: https://youtu.be/nHq_HVwidqk
 ihm: 2
 user: 2
 techno: 2
