@@ -10,5 +10,5 @@ Les travaux étudiants du projet <a href="https://ace-design.github.io/champlain
  
 <!--more-->
 
-Deux travaux sont disponibles : <a href="https://ace-design.github.io/champlain/travauxetudiants/lp20-iotia4">celui du groupe 2</a> et <a href="https://ace-design.github.io/champlain/travauxetudiants/lp20-damuml">celui du groupe 3</a>.
+Deux travaux ont été ajoutés : <a href="https://ace-design.github.io/champlain/travauxetudiants/lp20-iotia4">celui du groupe 2</a> et <a href="https://ace-design.github.io/champlain/travauxetudiants/lp20-damuml">celui du groupe 3</a>.
 Bravo aux étudiants pour leur sérieux travail ! 
