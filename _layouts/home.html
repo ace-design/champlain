@@ -15,14 +15,16 @@ layout: default
 
     <section class="souspartie">
         <h1>Description du projet</h1>
+        
+        <p> En considérant le seul problème de la maladie d’Alzheimer, <b>la société Alzheimer Canada recense 564,000 patients diagnostiqués</b> en 2018 et anticipe un doublement de cette population d’ici 15 ans. Connaissant de surcroit la <b>place prépondérante des logiciels</b> dans la vie de tous les jours, nous défendons qu’il est nécessaire de sensibiliser les étudiants à la <b>prise en compte du vieillissement de la population</b>.</p>
+        
+        <p>Dans ce projet, nous nous proposons d’étudier les spécificités de la prise en compte des utilisateurs finaux dans le développement logiciel des applications dédiées au support des aînés, et de <b>mettre en place des cours de formation interdisciplinaires</b> qui mêlent les différentes compétences impliquées dans le développement de telles applications.</p>
 
-        <p>Le génie logiciel est un sous-domaine de l’informatique, qui a pour vocation d’étudier la construction de logiciels, en analysant les bonnes pratiques des développeurs de logiciels. Il est ainsi crucial de former aux bonnes pratiques de développement la relève à venir, considérant la place prépondérante des logiciels dans la vie de tous les jours, tout particulièrement au sein de la population vieillissante où le manque de logiciels adaptés est criant. Dans ce projet, nous nous proposons d’étudier les spécificités de la prise en compte des utilisateurs finaux dans le développement logiciel des applications dédiées au support des aînés . Ici, la prise en compte de l’utilisateur ainsi que l’adaptation des logiciels à leur contexte d’exécution (p. ex, patient, soignant, aidant) sont cruciales et mobilisent des compétences de plusieurs sous-domaines de l’informatique. l’UNS a par exemple déjà collaboré avec des acteurs socio-économiques dans le cadre du projet STM3, visant à l’adaptation des logiciels de maintenance et de réglage d’implants cochléaires.</p>
+        <p>Ce site web a pour vocation de présenter ce projet ainsi que ses résultats. Il met à disposition tous les enseignements réalisés dans le cadre de ce projet, les matériels de cours et les travaux étudiants.</p>
+        
 
-        <p>Dans ce contexte, le principal défi à relever est la mise en place de cours de formation interdisciplinaires qui mêlent les différentes compétences impliquées dans le développement de telles applications . S’il est aisé d’enseigner séparément chacune des composantes nécessaires à ce type de développement, l’intégration de toutes ces compétences pour produire des applications adaptées aux aînés est plus complexe que la somme de ses parties. Par exemple, la prise en compte de l’utilisateur peut être enseignée dans des modules dédiés au développement agile, et l’ergonomie des interfaces personnes-machines peut elle aussi être enseignée dans un module séparé. Mais pour prendre en compte un utilisateur tel qu’une personne atteinte de la maladie d'Alzheimer, il est nécessaire d’utiliser des compétences spécifiques d’ergonomie (basée sur des capacités de mémoire à court terme disparaissantes et à long terme amplifiées) pour le développement de ces applications. De même, il est nécessaire d’intégrer à ce développement une prise en compte des soignants, de la famille du patient, en plus du patient lui-même . En considérant le seul problème de la maladie d’Alzheimer (parmi les autres problèmes cognitifs reconnus dans le cadre d’une population vieillissante), la société Alzheimer Canada recense 564,000 patients diagnostiqués en 2018 et anticipe un doublement de cette population d’ici 15 ans.</p>
 
-        <p>Ce texte est temporaire.</p>
-
-        <p><i>Plus d'informations sur la proposition de ce projet <a href="{{ "assets/documents/2019_champlain_consortium.pdf" | relative_url }}">ici</a> et <a href="{{ "assets/documents/2019_champlain_projet.pdf" | relative_url }}">ici</a>.</i></p>
+        <p><i>Plus d'informations sur ce projet : <a target = "_blank" href="{{ "assets/documents/2019_champlain_consortium.pdf" | relative_url }}">2019_champlain_consortium</a>, <a target = "_blank" href="{{ "assets/documents/2019_champlain_projet.pdf" | relative_url }}">2019_champlain_projet</a>.</i></p>
     </section>
 
 
@@ -86,7 +88,7 @@ layout: default
             {% endif %}
             <div class="col-md-3">
                 <div class="media">
-                    <a class="pull-left" href="{{ member.url }}">
+                    <a target = "_blank" class="pull-left" href="{{ member.url }}">
                         <img class="media-object partenaireshome" src="{{ member.logo | relative_url }}">
                     </a>
                 </div>

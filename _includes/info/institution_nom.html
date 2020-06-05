@@ -2,7 +2,7 @@
 
  {%- if item.institution -%}
  {% assign inst = site.data.authors | where: "id",item.institution | first %}
- {%- if inst.url -%}<a href="{{ inst.url | relative_url }}" target="_blank">{%- endif -%}
+ {%- if inst.url -%}<a target = "_blank" href="{{ inst.url | relative_url }}" target="_blank">{%- endif -%}
      <p class="souslabel">{{ inst.id }}</p>
      {%- if inst.url -%}</a>{%- endif -%}
  {%- endif -%}
