@@ -1,6 +1,6 @@
 --- 
 layout: page
-title : Equipe  
+title : Équipe  
 permalink: /equipe/
 subtitle: "" 
 feature-img: "assets/img/pexels/team.jpg"
