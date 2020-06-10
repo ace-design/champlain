@@ -1,11 +1,13 @@
 {% assign enseignements = site.enseignements | sort: 'date' | reverse %}
 {% assign year = 2000 %}
 
-<div class="support">
-<i class="fa fa-search"></i><input type="text" id="search-input" placeholder="Vous recherchez un enseignement ?" class="search-bar">
+<div class="support" style="padding-bottom: 0; padding-top: 0">
+    <div class="support-info">
+        <h3 style="margin: 0"><i class="fa fa-search"></i></h3><input type="text" id="search-input" placeholder="Vous recherchez un enseignement ?" class="search-bar" style="margin-left: 0.5em">
+    </div>
 </div>
-<div class="support">
-<ul id="results-container" style="margin: 0"></ul>
+<div class="support" style="padding-bottom: 0; padding-top: 0">
+    <ul id="results-container" style="margin: 0"></ul>
 </div>
 
 <section>
@@ -23,19 +25,20 @@
             fuzzy: false,
             exclude: []
         })
+
     </script>
 </section>
 
 
-<div class="support">
+<div class="support" style="padding-top: 0">
     {% for enseignement in enseignements %}
     {% assign current_year = enseignement.date | date: "%Y" %}
     {% assign next_year = enseignement.date | date: "%Y" | plus: '1' %}
-    {% if year != current_year  %} 
+    {% if year != current_year  %}
     <h2>{{ current_year }} - {{ next_year }}</h2>
     {% assign year = current_year %}
     {% endif %}
-    
+
     <div class="support-teaser">
         <span>
             <header>
@@ -46,7 +49,3 @@
     </div>
     {% endfor %}
 </div>
-
-
-
-

@@ -1,19 +1,6 @@
 {% assign item = include.item %}
 
 <div class="enseignement-info">
-    <p class="label">Type <b>Matériel de cours - </b></p>
-    {% if item.type=="projet" %}
-        <p class="label"><b>Sujet de projet</b></p>
-    {% endif %}
-    {% if item.type=="eval" %}
-        <p class="label"><b>Évaluation</b></p>
-    {% endif %}
-    {% if item.type=="support" %}
-        <p class="label"><b>Support de cours</b></p>
-    {% endif %}
-</div>
-
-<div class="enseignement-info">
     <p class="label">Enseignants</p>
     {% include info/authors_info.html item=item %}
 </div>
