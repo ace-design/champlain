@@ -3,10 +3,10 @@ baseurl: "/"
 url: "https://ace-design.github.io/champlain/"
 
 # THEME-SPECIFIC CONFIGURATION
-title: Logiciels en support à la population vieillissante     # site's title
+title: Développement de logiciels en support à la population vieillissante     # site's title
 description: "Présentation du projet"                   # used by search engines
-avatar: assets/img/triangle.png                         # Empty for no avatar in navbar
-favicon: assets/favicon.ico                             # Icon displayed in the tab
+avatar: assets/img/ordinateur.png                         # Empty for no avatar in navbar
+favicon: assets/fav.ico                             # Icon displayed in the tab
 
 # Header and footer text
 header_text: Accueil  # Change Blog header text

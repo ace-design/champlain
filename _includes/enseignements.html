@@ -1,11 +1,8 @@
 {% assign enseignements = site.enseignements | sort: 'date' | reverse %}
 {% assign year = 2000 %}
 
-<p>Vous trouverez sur cette page tous les enseignements réalisés dans le cadre de ce projet. Vous pouvez consulter plus spécifiquement les matériels de cours dans l'onglet du même nom, ou directement dans les différents enseignements.</p>
-
 <div class="support">
-<h3 class="recherche"><i class="fa fa-search"></i>Vous recherchez un enseignement ?</h3>
-<input type="text" id="search-input" placeholder="Entrez des mots clés..." class="search-bar">
+<i class="fa fa-search"></i><input type="text" id="search-input" placeholder="Vous recherchez un enseignement ?" class="search-bar">
 </div>
 <div class="support">
 <ul id="results-container" style="margin: 0"></ul>
