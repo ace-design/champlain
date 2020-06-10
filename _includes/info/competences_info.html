@@ -8,4 +8,6 @@
     {%- if item.user -%}<p class="souslabel"><span class="infobulle" aria-label="Prise en compte de l'utilisateur">UTILISATEUR</span></p>{%- endif -%}
     {%- if item.io -%}<p class="souslabel"><span class="infobulle" aria-label="Internet des objets">IO</span></p>{%- endif -%}
     {%- if item.techno -%}<p class="souslabel"><span class="infobulle" aria-label="Techonologies">TECHNO</span></p>{%- endif -%}
+{% else %}
+    <p class="label">Aucun domaine de compétence visé</p>
 {%- endif -%}

@@ -32,14 +32,17 @@ layout: default
         {%- for item2 in supportscours -%}
 
         {% if item2.type == "projet" %}
+        {% assign typeIntitutle = "Sujet de projet" %}
         {% assign type = "is-warning" %}
         {% assign icone = "fa-pencil" %}
         {% endif %}
         {% if item2.type == "eval" %}
+        {% assign typeIntitutle = "Évaluation" %}
         {% assign type = "is-danger" %}
         {% assign icone = "fa-graduation-cap" %}
         {% endif %}
         {% if item2.type == "support" %}
+        {% assign typeIntitutle = "Support de cours" %}
         {% assign type = "is-primary" %}
         {% assign icone = "fa-book" %}
         {% endif %}
@@ -48,7 +51,7 @@ layout: default
             <div class="timeline-marker {{ type }} is-icon"><i class="fa {{ icone }}"></i></div>
             <div class="timeline-content">
                 <div class="support-teaser">
-                    <p class="heading"><a href="{{ item2.url | relative_url }}">{{ item2.title }}</a></p>
+                    <p class="heading"><a href="{{ item2.url | relative_url }}">{{ typeIntitutle }} : {{ item2.title }}</a></p>
                     {% include support_info2.html item=item2 %}
                 </div>
             </div>
