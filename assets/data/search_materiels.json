@@ -4,7 +4,7 @@
   {% for enseignement in site.supportscours %}
   {
     "title"    : "{{ enseignement.title | escape }}",
-    "auteurs" : "{{ enseignement.authors }}",
+    "auteurs" : "{% assign authors = enseignement.authors  | split: ", " %}{% for author in authors %}{% assign auteur = site.data.authors | where: "id",author | first %}{% if auteur.avatar  %}{{ auteur.name }} {% else %}{{ author }} {% endif %}{% endfor %}",
     "composante" : "{{ enseignement.composante }}",
     "level" : "{% if enseignement.level == 1 %}Licence/Bachelor{% endif %}{% if enseignement.level == 2 %}Master/Maîtrise{% endif %}{% if enseignement.level == 3 %}Doctorat{% endif %}",
     "competences" : "{% if enseignement.ihm or enseignement.ia or enseignement.gl or enseignement.user or enseignement.io or enseignement.techo %}{% if enseignement.ihm %}Intéraction Homme-Machine ; {% endif %}{% if enseignement.user %}Prise en compte de l'utilisateur ; {% endif %}{% if enseignement.io %}Internet des objets ; {% endif %}{% if enseignement.gl %}Génie Logiciel ; {% endif %}{% if enseignement.ia %}Intelligence artificielle ; {% endif %}{% if enseignement.techno %}Technologies ; {% endif %}{% else %}Non renseigné{% endif %}",

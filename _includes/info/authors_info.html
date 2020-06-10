@@ -4,6 +4,6 @@
 {% for author in authors %}
 {% assign auteur = site.data.authors | where: "id",author | first %}
 {%- if auteur.url -%}<a target = "_blank" href="{{ auteur.url | relative_url }}" target="_blank">{%- endif -%}
-    {% if auteur.avatar  %}<img src="{{ auteur.avatar | relative_url }}">{% else %}<p class="souslabel">{{ author }} </p>{% endif %}
+    {% if auteur.avatar  %}<span class="infobulle" aria-label="{{ auteur.name }}"><img src="{{ auteur.avatar | relative_url }}"></span>{% else %}<p class="souslabel">{{ author }} </p>{% endif %}
     {%- if auteur.url -%}</a>{%- endif -%}
 {% endfor %}
