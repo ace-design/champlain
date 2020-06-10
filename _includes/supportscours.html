@@ -1,22 +1,26 @@
 {% assign materielsdecours = site.supportscours %}
 
 
+<p>Vous trouverez sur cette page tous les matériels de cours réalisés dans les enseignements. Un matériel de cours peut être soit un sujet de projet, une évaluation ou un support de cours.</p>
+
+
 {% comment %} Menu relié aux ancres des différents types {% endcomment %}
 
-
-<div class="center-div">
-    <a href="#sujetsdeprojet" class="bouton">Sujets de projet</a>
-    <a href="#evaluations" class="bouton">Évaluations</a>
-    <a href="#supportsdecours" class="bouton">Supports de cours</a>
+<div class="outer-div">
+    <div class="inner-div">
+        <a href="#sujetsdeprojet" class="bouton">Sujets de projet</a>
+        <a href="#evaluations" class="bouton">Évaluations</a>
+        <a href="#supportsdecours" class="bouton">Supports de cours</a>
+    </div>
 </div>
 
 
 <div class="support">
-<h3><i class="fa fa-search"></i> Vous recherchez un matériel de cours ?</h3>
-<input type="text" id="search-input" placeholder="Entrez des mots clés..." class="search-bar">
+    <h3 class="recherche"><i class="fa fa-search"></i> Vous recherchez un matériel de cours ?</h3>
+    <input type="text" id="search-input" placeholder="Entrez des mots clés..." class="search-bar">
 </div>
 <div class="support" style="padding-bottom: 0">
-<ul id="results-container" style="margin: 0"></ul>
+    <ul id="results-container" style="margin: 0"></ul>
 </div>
 
 
@@ -35,6 +39,7 @@
             fuzzy: false,
             exclude: []
         })
+
     </script>
 </section>
 

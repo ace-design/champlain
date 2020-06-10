@@ -1,6 +1,34 @@
 {% assign enseignements = site.enseignements | sort: 'date' | reverse %}
 {% assign year = 2000 %}
 
+<p>Vous trouverez sur cette page tous les enseignements réalisés dans le cadre de ce projet. Vous pouvez consulter plus spécifiquement les matériels de cours dans l'onglet du même nom, ou directement dans les différents enseignements.</p>
+
+<div class="support">
+<h3 class="recherche"><i class="fa fa-search"></i>Vous recherchez un enseignement ?</h3>
+<input type="text" id="search-input" placeholder="Entrez des mots clés..." class="search-bar">
+</div>
+<div class="support">
+<ul id="results-container" style="margin: 0"></ul>
+</div>
+
+<section>
+    <!-- Script pointing to jekyll-search.js -->
+    <script src="{{ "/assets/js/vendor/simple-jekyll-search.min.js" | relative_url }}" type="text/javascript"></script>
+
+    <script type="text/javascript">
+        SimpleJekyllSearch({
+            searchInput: document.getElementById('search-input'),
+            resultsContainer: document.getElementById('results-container'),
+            json: '{{ "/assets/data/search_enseignements.json" | relative_url }}',
+            searchResultTemplate: '<div class="support-teaser"><span><header><h1><a href="{url}">{sigle} - {title}</a></h1><div class="support-info"><p class="label">Par</p><p class="souslabel">{auteurs}</p></div><div class="support-info"><p class="label">A</p><p class="souslabel">{institution}</p><p class="souslabel">{composante}</p></div><div class="support-info"><p class="label">Niveau</p><p class="souslabel">{level}</p></div><div class="support-info"><p class="label">Domaines de compétence visés</p><br/><p class="souslabel">{competences}</p></header></span></div>',
+            noResultsText: 'No results found',
+            limit: 10,
+            fuzzy: false,
+            exclude: []
+        })
+    </script>
+</section>
+
 
 <div class="support">
     {% for enseignement in enseignements %}

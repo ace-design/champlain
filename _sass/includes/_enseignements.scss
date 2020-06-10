@@ -286,12 +286,20 @@ header {
 	padding:6px 8px 6px 8px;
     margin: 0 10px 0 10px;
 	box-shadow:1px 1px 3px #999;
+    font-weight: bold;
 }
 
-.center-div {
-    margin: 0 auto;
-    width: 25em; 
+.outer-div {
+    text-align: center;
 }
+
+.inner-div {
+    display: inline-block;
+    margin-top: 1.5em;
+    margin-bottom: 1em;
+    
+}
+
 p.heading {
     margin-bottom: 0.2em;
     a {
@@ -305,6 +313,10 @@ h1.materiels {
     letter-spacing: 0.1em;
     border-top: 1px solid rgba(0,0,0,0.1);
     margin-top: 1.5em;
+}
+
+.recherche {
+    color: $meta;
 }
 
 .timeline {

@@ -1,5 +1,17 @@
+{% comment %} Menu relié aux ancres des différentes parties {% endcomment %}
 
-<div class="enseignement">
+
+<div class="outer-div">
+    <div class="inner-div">
+        <a href="#chercheurs" class="bouton">Chercheurs principaux</a>
+        <a href="#partenaires" class="bouton">Partenaires</a>
+        <a href="#intervenants" class="bouton">Intervenants</a>
+        <a href="#competences" class="bouton">Compétences de l'équipe</a>
+    </div>
+</div>
+
+
+<div class="enseignement" id="chercheurs">
     <h1>Chercheurs principaux</h1>
 
     {% assign current_team = site.data.authors | where: "position","equipe" %}
@@ -15,16 +27,16 @@
         {% endif %}
         <div class="col-md-4 memberbox">
             <div class="media">
-                <a target = "_blank" class="pull-left" href="{{ member.url }}">
+                <a target="_blank" class="pull-left" href="{{ member.url }}">
                     <img class="media-object member-photo" src="{{ member.avatar | relative_url }}">
                 </a>
                 <div class="media-body">
-                    <div class="head media-heading member-name"><a target = "_blank" href="{{ member.url }}" class="off">
+                    <div class="head media-heading member-name"><a target="_blank" href="{{ member.url }}" class="off">
                             <h3 style="margin-bottom: 0.1em; text-align: center">{{ member.name }}</h3>
                         </a></div>
                     <a href="#{{ member.institution }}">
                         <p class="souslabel" style="text-transform: uppercase; text-align: center; margin-bottom: 0.2em;">{{ member.institution }}</p>
-                        </a>
+                    </a>
 
                     <p class="souslabel" style="text-justify: auto; text-align: justify">{{ member.short }}</p>
                 </div>
@@ -38,7 +50,7 @@
     {% endfor %}
 
 </div>
-<div class="enseignement">
+<div class="enseignement" id="partenaires">
     <h1>Partenaires</h1>
 
     {% assign current_team = site.data.authors | where: "position","institution" %}
@@ -54,7 +66,7 @@
         {% endif %}
         <div class="col-md-4 memberbox" id="{{ member.id }}">
             <div class="media">
-                <a target = "_blank" class="pull-left" href="{{ member.url }}">
+                <a target="_blank" class="pull-left" href="{{ member.url }}">
                     <img class="media-object institution-photo" src="{{ member.logo | relative_url }}">
                 </a>
                 <div class="media-body">
@@ -72,7 +84,7 @@
     {% endfor %}
 
 </div>
-<div class="enseignement">
+<div class="enseignement" id="intervenants">
     <h1>Intervenants</h1>
 
     {% assign current_team = site.data.authors | where: "position","intervenant" %}
@@ -95,7 +107,7 @@
 
 <img src="{{ "assets/img/avatars/team.png" | relative_url }}">
 
-<section class="enseignement">
+<section class="enseignement" id="competences">
     <h1>Compétences de l'équipe</h1>
 
 
