@@ -235,13 +235,13 @@
                     final += "<div class=\"support-info\">";
                     for (var j = 0; j < objets[i].auteurs.length - 1; j++) {
                         if (objets[i].auteurs[j].url != null) {
-                            final += "<a target = \"_blank\" href=\"" + objets[i].auteurs[j].url + "\"><img src=\"http://localhost:4000/" + objets[i].auteurs[j].avatar + "\"></a>";
+                            final += "<a target = \"_blank\" href=\"" + objets[i].auteurs[j].url + "\"><img src=\"https://ace-design.github.io/champlain/" + objets[i].auteurs[j].avatar + "\"></a>";
                         }
                         final += "<p class=\"souslabel\">" + objets[i].auteurs[j].name + "</p>"
                     }
 
                     /// Gestion et l'institution et de la composante 
-                    final += "<a target = \"_blank\" href=\"" + objets[i].institution.url + "\"><img src=\"http://localhost:4000/" + objets[i].institution.avatar + "\"></a>";
+                    final += "<a target = \"_blank\" href=\"" + objets[i].institution.url + "\"><img src=\"https://ace-design.github.io/champlain/" + objets[i].institution.avatar + "\"></a>";
                     final += "<p class=\"souslabel\">" + objets[i].composante + "</p>";
 
                     final += "</div>";
