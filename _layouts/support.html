@@ -6,6 +6,20 @@ layout: default
 {% assign taille = travauxetudiants | size %}
 
 <article {% if page.feature-img or page.color %}class="feature-image" {% endif %}>
+    
+    {% assign enseignements = site.pages | where: "title","Enseignements" | first %}
+    {% assign materiels = site.pages | where: "title","Matériels de cours" | first %}
+    {%- for enseignement in site.enseignements -%}
+        {%- if enseignement.sigle == page.enseignement -%}
+            {% assign ens = enseignement %}
+        {%- endif -%}
+    {%- endfor -%}
+
+    
+    
+    <p><a href="{{ enseignements.url | relative_url }}">Enseignements > </a><a href="{{ ens.url | relative_url }}">{{ ens.sigle }} - {{ ens.title }} > </a><a href="{{ materiels.url | relative_url }}">Matériels de cours ></a></p>
+
+    
     <header id="main" style="">
         {% unless page.hide_title %}
         <h1 class="title">{{ page.title }}</h1>

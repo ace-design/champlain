@@ -3,6 +3,23 @@ layout: default
 ---
 
 <article {% if page.feature-img or page.color %}class="feature-image" {% endif %}>
+    {% assign enseignements = site.pages | where: "title","Enseignements" | first %}
+    {% assign materiels = site.pages | where: "title","Matériels de cours" | first %}
+    {%- for sujet in site.supportscours -%}
+    {%- if sujet.title == page.sujet -%}
+        {% assign suj = sujet %}
+    {%- endif -%}
+    {%- endfor -%}
+    {%- for enseignement in site.enseignements -%}
+        {%- if enseignement.sigle == suj.enseignement -%}
+            {% assign ens = enseignement %}
+        {%- endif -%}
+    {%- endfor -%}
+    
+    
+    <p><a href="{{ enseignements.url | relative_url }}">Enseignements > </a><a href="{{ ens.url | relative_url }}">{{ ens.sigle }} - {{ ens.title }} > </a><a href="{{ materiels.url | relative_url }}">Sujet de projet > </a><a href="{{ suj.url | relative_url }}">{{ suj.title }} ></a></p>
+
+    
     <header id="main" style="">
         {% unless page.hide_title %}
         <h1 class="title">{{ page.title }}</h1>

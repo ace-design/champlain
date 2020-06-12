@@ -6,7 +6,7 @@ title: Génie Logiciel (conception, test, méthodologie) en Licence Professionne
 date: 09/2019
 authors: mbf, Jean-Michel Bruel, Julien Cremoni
 institution: UCA
-composante: IUT Nice Côte d'Azur, département d'informatique
+composante: IUT Nice Côte d'Azur, département informatique
 level: 1
 user: 2
 gl: 3

@@ -328,3 +328,22 @@ h1.materiels {
         margin-top: 0.5em;
     }
 }
+
+select {
+    color: #555; 
+	background: #f5f5f5;
+	border:none;
+	box-shadow:1px 1px 3px #999;
+    border-radius: 0.1em;
+    margin-right: 0.5em;
+    margin-bottom: 0.5em;
+}
+
+.btn-save {
+    color: #555; 
+	background: #f5f5f5;
+	border:none;
+	box-shadow:1px 1px 3px #999;
+    border-radius: 0.1em;
+    padding: 0.1em 0.3em 0.1em 0.3em; 
+}

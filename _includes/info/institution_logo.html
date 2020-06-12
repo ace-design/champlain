@@ -1,11 +1,9 @@
 {% assign item=include.item %}
 
-{%- if item.institution -%}
-    {% assign inst = site.data.authors | where: "id",item.institution | first %}
-    {%- if inst.url -%}<a target = "_blank" href="{{ inst.url | relative_url }}" target="_blank">{%- endif -%}
-        {% if inst.logo  %}<span class="infobulle" aria-label="{{ inst.name }}"><img src="{{ inst.logo | relative_url }}"></span>{% endif %}
-        {%- if inst.url -%}</a>{%- endif -%}
-    {%- if item.composante -%}
-        <p class="souslabel">{{ item.composante }}</p>
-    {%- endif -%}
+{% assign inst = site.data.authors | where: "id",item.institution | first %}
+<a target="_blank" href="{{ inst.url | relative_url }}" target="_blank" class="institution">
+    <span class="infobulle" aria-label="{{ inst.name }}"><img src="{{ inst.logo | relative_url }}"></span>
+</a>
+{%- if item.composante -%}
+    <p class="souslabel">{{ item.composante }}</p>
 {%- endif -%}
