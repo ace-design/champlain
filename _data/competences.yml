@@ -1,18 +1,24 @@
 - name: Intéractions Homme-Machine (IHM)
   short: « Les interfaces homme-machine ou IHM (aussi appelées interactions personne-machine ou IPM) sont les moyens et outils mis en œuvre afin qu'un humain puisse contrôler et communiquer avec une machine. Les ingénieurs en ce domaine étudient la façon dont les humains interagissent avec les ordinateurs ou entre eux à l'aide d'ordinateurs, ainsi que la façon de concevoir des systèmes qui soient ergonomiques, efficaces, faciles à utiliser ou plus généralement adaptés à leur contexte d'utilisation. » Texte temporaire tiré de Wikipedia.
-  image: "assets/img/pexels/ihm.jpg"
+  image-hd: "assets/img/pexels/ihm.jpg"
+  image-ld: "assets/img/pexels/ihm_ld.jpg"
 - name: Génie Logiciel (GL)
   short: « Le génie logiciel est une science de génie industriel qui étudie les méthodes de travail et les bonnes pratiques des ingénieurs qui développent des logiciels. Le génie logiciel s'intéresse en particulier aux procédures systématiques qui permettent d'arriver à ce que des logiciels de grande taille correspondent aux attentes du client, soient fiables, aient un coût d'entretien réduit et de bonnes performances tout en respectant les délais et les coûts de construction. » Texte temporaire tiré de Wikipedia.
-  image: "assets/img/pexels/gl.jpg"
+  image-hd: "assets/img/pexels/gl.jpg"
+  image-ld: "assets/img/pexels/gl_ld.jpg"
 - name: Intelligence Artificielle (IA)
   short: « L'intelligence artificielle (IA) est « l'ensemble des théories et des techniques mises en œuvre en vue de réaliser des machines capables de simuler l'intelligence ». Elle correspond donc à un ensemble de concepts et de technologies plus qu'à une discipline autonome constituée. D'autres, remarquant la définition peu précise de l'IA, notamment la CNIL, introduisent ce sujet comme le grand mythe de notre temps. » Texte temporaire tiré de Wikipedia.
-  image: "assets/img/pexels/ia.jpg"
+  image-hd: "assets/img/pexels/ia.jpg"
+  image-ld: "assets/img/pexels/ia_ld.jpg"
 - name: Prise en compte de l'utilisateur (UTILISATEUR)
   short: « La conception centrée sur l'utilisateur ou conception orientée utilisateur est une philosophie et une démarche de conception surtout présente en ergonomie informatique, où les besoins, les attentes et les caractéristiques propres des utilisateurs finaux sont pris en compte à chaque étape du processus de développement d'un produit. » Texte temporaire tiré de Wikipedia.
-  image: "assets/img/pexels/user.jpg"
+  image-hd: "assets/img/pexels/user.jpg"
+  image-ld: "assets/img/pexels/user_ld.jpg"
 - name: Internet des Objets (IO)
   short: « L'Internet des objets est l'interconnexion entre l'Internet et des objets, des lieux et des environnements physiques. L'appellation désigne un nombre croissant d'objets connectés à l'Internet permettant ainsi une communication entre nos biens dits physiques et leurs existences numériques. Ces formes de connexions permettent de rassembler de nouvelles masses de données sur le réseau et donc, de nouvelles connaissances et formes de savoirs. » Texte temporaire tiré de Wikipedia.
-  image: "assets/img/pexels/io.jpg"
+  image-hd: "assets/img/pexels/io.jpg"
+  image-ld: "assets/img/pexels/io.jpg"
 - name: Technologies (TECHNO)
   short: « La technologie est l'étude des outils et des techniques. Le terme désigne les observations sur l'état de l'art aux diverses périodes historiques, en matière d'outils et de savoir-faire. Il comprend l'art, l'artisanat, les métiers, les sciences appliquées et éventuellement les connaissances. » Texte temporaire tiré de Wikipedia.
-  image: "assets/img/pexels/techno.jpg"
+  image-hd: "assets/img/pexels/techno.jpg"
+  image-ld: "assets/img/pexels/techno_ld.jpg"

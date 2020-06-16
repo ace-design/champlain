@@ -17,7 +17,7 @@
 {%- if item.sujet -%}
 <div class="enseignement-info">
     <p class="label">Sujet de projet</p>
-    {%- for sujet in site.supportscours -%}
+    {%- for sujet in site.materielsdecours -%}
     {%- if sujet.title == page.sujet -%}
     <p class="souslabel"><a aria-label="{{ sujet.title }}" href="{{ sujet.url || relative_url }}">
             {{ sujet.title }}

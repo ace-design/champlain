@@ -127,7 +127,7 @@
                     <div class="head media-heading member-name">
                         <h3>{{ competence.name }}</h3>
                     </div>
-                    <img class="media-object competence-photo" src="{{ competence.image | relative_url }}">
+                    <img class="media-object competence-photo" srcset="{{ competence.image-ld | relative_url }}, {{ competence.image-hd | relative_url }} 1.5x" src="{{ competence.image-hd | relative_url }}">
                     <p class="souslabel">{{ competence.short }}</p>
                 </div>
             </div>
