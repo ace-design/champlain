@@ -4,7 +4,7 @@ title: "groupe 2 de la LP IOTIA : Quiz pour population vieillissante"
 date: 03/2020
 etudiants: Dieunelson Dorcelus 
 sujet: "Quiz pour population vieillissante"
-level: 2
+level: 1
 institution: UCA
 composante: IUT Nice Côte d'Azur, département d'informatique 
 ihm: 2

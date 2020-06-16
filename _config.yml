@@ -2,7 +2,6 @@
 baseurl: "/"
 url: "https://ace-design.github.io/champlain/"
 
-# THEME-SPECIFIC CONFIGURATION
 title: Développement de logiciels en support à la population vieillissante     # site's title
 description: "Présentation du projet"                   # used by search engines
 avatar: assets/img/ordinateur.png                         # Empty for no avatar in navbar
@@ -33,18 +32,18 @@ language:                                               # In _data/language.yml
 paginate: 5
 paginate_path: "/blog/page:num"
 
-# PORTFOLIO
+
 collections:
   posts: 
     output: true
     permalink: /:collection/:name
-  supportscours: 
+  enseignements: 
+    output: true
+    permalink: /:collection/:name
+  materielsdecours: 
     output: true
     permalink: /:collection/:name
   travauxetudiants: 
-    output: true
-    permalink: /:collection/:name
-  enseignements: 
     output: true
     permalink: /:collection/:name
 

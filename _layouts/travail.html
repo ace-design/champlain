@@ -5,7 +5,8 @@ layout: default
 <article {% if page.feature-img or page.color %}class="feature-image" {% endif %}>
     {% assign enseignements = site.pages | where: "title","Enseignements" | first %}
     {% assign materiels = site.pages | where: "title","Matériels de cours" | first %}
-    {%- for sujet in site.supportscours -%}
+    {% assign travaux = site.pages | where: "title","Travaux étudiants" | first %}
+    {%- for sujet in site.materielsdecours -%}
     {%- if sujet.title == page.sujet -%}
         {% assign suj = sujet %}
     {%- endif -%}
@@ -17,7 +18,7 @@ layout: default
     {%- endfor -%}
     
     
-    <p><a href="{{ enseignements.url | relative_url }}">Enseignements > </a><a href="{{ ens.url | relative_url }}">{{ ens.sigle }} - {{ ens.title }} > </a><a href="{{ materiels.url | relative_url }}">Sujet de projet > </a><a href="{{ suj.url | relative_url }}">{{ suj.title }} ></a></p>
+    <p><a href="{{ enseignements.url | relative_url }}">Enseignements > </a><a href="{{ ens.url | relative_url }}">{{ ens.sigle }} - {{ ens.title }} > </a><a href="{{ materiels.url | relative_url }}">Sujet de projet > </a><a href="{{ suj.url | relative_url }}">{{ suj.title }} ></a> <a href="{{ travaux.url | relative_url }}">Travaux étudiants ></a></p>
 
     
     <header id="main" style="">
@@ -31,13 +32,4 @@ layout: default
     {% if page.link %}
         <a target = "_blank" href="{{ page.link }}">Accéder au travail étudiant</a>
     {% endif %}
-
-    <!-- Social media shares -->
-    {% include share_buttons.html %}
-
 </article>
-
-<!-- Post navigation -->
-{% if site.post_navigation  or site.theme_settings.post_navigation %}
-{% include post_nav.html %}
-{% endif %}

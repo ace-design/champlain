@@ -26,19 +26,54 @@
             fuzzy: false,
             exclude: []
         })
+
     </script>
 </section>
 
 
-<div class="support">
+
+<div class="support" style="padding-bottom: 0;">
+    <div class="outer-div">
+        <div class="inner-div" style="margin-bottom: 0;">
+            <select id="selectInstitution" class="">
+                <option value="choose" selected>Sélectionnez une institution</option>
+                <option value="Université Côte d'Azur" data-icon="" class="rounded-circle">Université Côte d'Azur</option>
+                <option value="Université du Québec à Montréal" data-icon="" class="rounded-circle">Université du Québec à Montréal</option>
+            </select>
+
+            <select id="selectNiveau" class="">
+                <option value="choose" selected>Sélectionnez un niveau</option>
+                <option value="Licence/Bachelor">Licence/Bachelor</option>
+                <option value="Master/Maîtrise">Master/Maîtrise</option>
+                <option value="Doctorat">Doctorat</option>
+            </select>
+
+            <select id="selectCompetence" class="">
+                <option value="choose" selected>Sélectionnez une compétence</option>
+                <option value="IHM">IHM</option>
+                <option value="IA">IA</option>
+                <option value="GL">GL</option>
+                <option value="IO">IO</option>
+                <option value="UTILISATEUR">UTILISATEUR</option>
+                <option value="TECHNO">TECHNO</option>
+            </select>
+
+
+            <button class="btn-save" id="save">Filtrer</button>
+        </div>
+    </div>
+</div>
+
+
+<div class="support" id="travaux" style="padding-top: 0;">
     {% for item in travauxetudiants %}
     {% assign current_year = item.date | date: "%Y" %}
     {% assign next_year = item.date | date: "%Y" | plus: '1' %}
-    {% if year != current_year  %} 
+    {% if year != current_year  %}
     <h2>{{ current_year }} - {{ next_year }}</h2>
     {% assign year = current_year %}
     {% endif %}
-    
+
     <div class="support-teaser">
         <span>
             <header>
@@ -50,4 +85,92 @@
     {% endfor %}
 </div>
 
-{% include blog_nav.html %}
+
+
+
+<script type="text/javascript">
+    var travaux = document.getElementById("travaux");
+
+    /// Filtre sur les institutions 
+
+    var institutionSelect = document.getElementById("selectInstitution");
+    let institutionFiltre = "";
+    institutionSelect.addEventListener("change", function() {
+        if (institutionSelect.value == "choose") {
+            institutionFiltre = "";
+        } else {
+            institutionFiltre = institutionSelect.value;
+        }
+    });
+
+
+    /// Filtre sur le niveau 
+
+    var niveauSelect = document.getElementById("selectNiveau");
+    let niveauFiltre = "";
+    niveauSelect.addEventListener("change", function() {
+        if (niveauSelect.value == "choose") {
+            niveauFiltre = "";
+        } else {
+            niveauFiltre = niveauSelect.value;
+        }
+    });
+
+
+    /// Filtre sur les compétences  
+
+    var competenceSelect = document.getElementById("selectCompetence");
+    let competenceFiltre = "";
+    competenceSelect.addEventListener("change", function() {
+        if (competenceSelect.value == "choose") {
+            competenceFiltre = "";
+        } else {
+            competenceFiltre = competenceSelect.value;
+        }
+    });
+
+    var save = document.getElementById("save");
+    save.addEventListener("click", function() {
+        var recuperes = document.getElementById("travaux");
+        var annee = 2000;
+        for (var i = 0; i < recuperes.children.length; i++) {
+            if (recuperes.children[i].tagName != "H2") {
+                var afficher = true;
+
+                var infos = recuperes.children[i].getElementsByClassName("support-info")
+
+                for (var j = 0; j < infos[0].children.length; j++) {
+                    if (infos[0].children[j].tagName == "A") {
+                        if (infos[0].children[j].className == "institution") {
+                            if (!(infos[0].children[j].children[0].getAttribute("aria-label") == institutionFiltre || institutionFiltre == "")) {
+                                afficher = false;
+                            }
+                            j++;
+                        }
+                    }
+                }
+
+
+                if (!(infos[1].children[1].textContent == niveauFiltre || niveauFiltre == "")) {
+                    afficher = false;
+                }
+
+                var competences = "";
+                for (var j = 3; j < infos[1].children.length; j++) {
+                    competences += infos[1].children[j].outerHTML;
+                }
+                if (!(competences.indexOf(competenceFiltre) != -1 || competenceFiltre == "")) {
+                    afficher = false;
+                }
+
+
+                if (afficher) {
+                    recuperes.children[i].style.display = "block";
+                } else {
+                    recuperes.children[i].style.display = "none";
+                }
+            }
+        }
+    });
+
+</script>

@@ -1,6 +1,6 @@
 ---
 
-layout: support
+layout: materiel
 
 title: "Présentation des technologies Table Interactive et IHM réparties"
 date: 01/2020

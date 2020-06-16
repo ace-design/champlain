@@ -1,10 +1,10 @@
 --- 
 layout: page
 title : Matériels de cours  
-permalink: /supportscours/
+permalink: /materielsdecours/
 subtitle: "" 
 feature-img: "assets/img/pexels/biblio.jpg"
 tags: []
 ---
 
-{% include supportscours.html %}
+{% include materielsdecours.html %}

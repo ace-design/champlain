@@ -1,6 +1,6 @@
 ---
 
-layout: support
+layout: materiel
 
 title: "PolyQuiz : Quiz pour population vieillissante"
 date: 01/2020

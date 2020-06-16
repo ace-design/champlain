@@ -4,7 +4,7 @@ title: "groupe 3 de la LP DAM : Diagrammes UML en début de projet"
 date: 01/2020
 etudiants: Mickaal Appel, Quentin Hamon, Martin Lenaerts
 sujet: "Quiz pour population vieillissante"
-level: 2
+level: 1
 institution: UCA
 composante: IUT Nice Côte d'Azur, département d'informatique 
 ihm: 2

@@ -1,6 +1,6 @@
 ---
 
-layout: support
+layout: materiel
 
 title: Quiz pour population vieillissante
 authors: mbf

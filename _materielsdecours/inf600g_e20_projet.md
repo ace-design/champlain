@@ -1,5 +1,5 @@
 ---
-layout: support
+layout: materiel
 title: Un quiz pour les aînés en résidence
 date: 05/05/2020
 authors: seb

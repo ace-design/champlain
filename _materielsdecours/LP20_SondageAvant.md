@@ -1,6 +1,6 @@
 ---
 
-layout: support
+layout: materiel
 
 title: "Sondage pour évaluer le niveau des étudiants avant le cours, la restitution du sondage en cours et l'organisation qui en a résulté"
 date: 12/2019
@@ -9,7 +9,7 @@ authors: mbf
 institution: UCA
 composante: IUT Nice Côte d'Azur, département d'informatique 
 
-level: 2
+level: 1
 
 enseignement: LP20
 link: "https://github.com/ace-design/champlain/assets/documents/LP20/Intro.pdf"

@@ -1,5 +1,5 @@
 --- 
-layout: support
+layout: materiel
 title: Ateliers à base de quiz pour le centre Alzheimer d'accueil de jour de Biot
 date: October 2019
 authors: amd

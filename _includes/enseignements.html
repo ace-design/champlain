@@ -93,21 +93,17 @@
 
 
 <script type="text/javascript">
-    var objets = new Array();
     var enseignements = document.getElementById("enseignements");
-
-    var save = document.getElementById("save");
-
 
     /// Filtre sur les auteurs 
 
-    var auteurSelect = document.getElementById("selectAuthors");
-    let auteurFiltre = "";
-    auteurSelect.addEventListener("change", function() {
-        if (auteurSelect.value == "choose") {
-            auteurFiltre = "";
-        } else {
-            auteurFiltre = auteurSelect.value;
+    var auteurSelect = document.getElementById("selectAuthors"); /// Récupération du select 
+    let auteurFiltre = ""; /// Variable qui correspond à la valeur du filtre 
+    auteurSelect.addEventListener("change", function() { /// Listener sur le select 
+        if (auteurSelect.value == "choose") { /// Si le select ne select rien 
+            auteurFiltre = ""; /// On met la variable à vide 
+        } else { /// Sinon 
+            auteurFiltre = auteurSelect.value; /// On donne à la variable la valeur du select 
         }
     });
 
@@ -151,120 +147,63 @@
     });
 
 
+    
+    var save = document.getElementById("save");
+    /// Lorsque l'on clique sur le bouton "filtrer" 
     save.addEventListener("click", function() {
-        //// On récupère tous les enseignements en parcourant le DOM, si on les a pas déjà récupéré 
-
-        if (objets.length == 0) {
-            var recuperes = document.getElementById("enseignements");
+        //if (objets.length == 0) { /// On récupère tous les enseignements en parcourant le DOM, si on les a pas déjà récupéré 
+            var recuperes = document.getElementById("enseignements"); /// On récupère la div qui contient les enseignements 
             var annee = 2000;
-            for (var i = 0; i < recuperes.children.length; i++) {
-                if (recuperes.children[i].tagName == "H2") {
-                    annee = recuperes.children[i].textContent.substring(0, 4);
-                } else {
-                    var enseignement = new Object();
-                    enseignement.year = parseInt(annee);
-                    enseignement.title = recuperes.children[i].children[0].children[0].children[0].children[0].textContent;
-                    enseignement.url = recuperes.children[i].children[0].children[0].children[0].children[0].getAttribute("href");
-                    enseignement.auteurs = new Array();
-                    enseignement.institution = new Object();
-                    enseignement.composante = "";
+            for (var i = 0; i < recuperes.children.length; i++) { /// On parcourt cette div  
+                if (recuperes.children[i].tagName != "H2") {  /// Sinon c'est qu'il s'agit d'une div représentant un enseignement 
+                    var afficher = true; 
 
-                    var infos = recuperes.children[i].getElementsByClassName("support-info")
+                    var infos = recuperes.children[i].getElementsByClassName("support-info");
 
+                    var auteur = false; 
                     for (var j = 0; j < infos[0].children.length; j++) {
-                        var auteur = new Object();
-                        if (infos[0].children[j].tagName == "A") {
-                            /// RECUPERATION DE L'INSTITUTION ET DE LA COMPOSANTE 
+                        if (infos[0].children[j].tagName == "A") { 
                             if (infos[0].children[j].className == "institution") {
-                                enseignement.institution.url = infos[0].children[j].getAttribute("href");
-                                enseignement.institution.avatar = infos[0].children[j].children[0].children[0].getAttribute("src");
-                                enseignement.institution.name = infos[0].children[j].children[0].getAttribute("aria-label");
-                                if (j != infos[0].children.length - 1) {
-                                    enseignement.composante = infos[0].children[j + 1].textContent;
+                                if(!(infos[0].children[j].children[0].getAttribute("aria-label") == institutionFiltre || institutionFiltre == "")) {
+                                    afficher = false; 
                                 }
                                 j++;
                             }
-                            /// RECUPERATION DES AUTEURS
+                            /// Soit un auteur 
                             else {
-                                auteur.name = infos[0].children[j + 1].textContent;
-                                auteur.url = infos[0].children[j].getAttribute("href");
-                                auteur.avatar = infos[0].children[j].children[0].getAttribute("src");
+                                if(infos[0].children[j + 1].textContent == auteurFiltre || auteurFiltre == ""){
+                                    console.log(infos[0].children[j + 1].textContent);
+                                    auteur = true; 
+                                }
                                 j++;
                             }
-
-                        } else {
-                            auteur.name = infos[0].children[j].textContent;
-                        }
-                        enseignement.auteurs.push(auteur);
+                        } 
                     }
-
-
-                    enseignement.niveau = infos[1].children[1].textContent;
+                    if(!auteur) {
+                        afficher = false; 
+                    }
+                    
+                    if(!(infos[1].children[1].textContent == niveauFiltre || niveauFiltre == "")) {
+                       afficher = false; 
+                    }
 
                     var competences = "";
                     for (var j = 1; j < infos[2].children.length; j++) {
                         competences += infos[2].children[j].outerHTML;
                     }
-                    enseignement.competences = competences;
-
-                    objets.push(enseignement);
-                }
-
-            }
-        }
-
-
-        ///// REECRITURE DU DOM 
-
-        var final = "";
-        var year = 2000;
-
-        for (var i = 0; i < objets.length; i++) {
-
-            for (var j = 0; j < objets[i].auteurs.length; j++) {
-                if ((objets[i].auteurs[j].name == auteurFiltre || auteurFiltre == "") && (objets[i].institution.name == institutionFiltre || institutionFiltre == "") && (objets[i].niveau == niveauFiltre || niveauFiltre == "") && (objets[i].competences.indexOf(competenceFiltre) != -1 || competenceFiltre == "")) {
-                    var current_year = objets[i].year;
-                    var next_year = objets[i].year + 1;
-                    if (current_year != year) {
-                        final += "<h2>" + current_year + " - " + next_year + "</h2>";
-                        year = current_year;
-                    }
-                    final += "<div class=\"support-teaser\"><span><header><h1><a href=\"" + objets[i].url + "\">" + objets[i].title + "</a></h1>";
-
-                    /// Gestion des auteurs 
-                    final += "<div class=\"support-info\">";
-                    for (var j = 0; j < objets[i].auteurs.length - 1; j++) {
-                        if (objets[i].auteurs[j].url != null) {
-                            final += "<a target = \"_blank\" href=\"" + objets[i].auteurs[j].url + "\"><img src=\"https://ace-design.github.io/champlain/" + objets[i].auteurs[j].avatar + "\"></a>";
-                        }
-                        final += "<p class=\"souslabel\">" + objets[i].auteurs[j].name + "</p>"
+                    if(!(competences.indexOf(competenceFiltre) != -1 || competenceFiltre == "")) {
+                        afficher = false; 
                     }
 
-                    /// Gestion et l'institution et de la composante 
-                    final += "<a target = \"_blank\" href=\"" + objets[i].institution.url + "\"><img src=\"https://ace-design.github.io/champlain/" + objets[i].institution.avatar + "\"></a>";
-                    final += "<p class=\"souslabel\">" + objets[i].composante + "</p>";
-
-                    final += "</div>";
-
-                    /// Gestion du niveau 
-                    final += "<div class=\"support-info\">";
-                    final += "<p class=\"label\">Niveau</p><p class=\"souslabel\">" + objets[i].niveau + "</p>";
-                    final += "</div>";
-
-                    /// Gestion des compétences  
-                    final += "<div class=\"support-info\">";
-                    final += "<p class=\"label\">Domaines de compétence visés</p>" + objets[i].competences;
-                    final += "</div>";
-
-                    final += "</header></span></div>";
+                    
+                    if(afficher) {
+                        recuperes.children[i].style.display="block";
+                    }else {
+                        recuperes.children[i].style.display="none";
+                    }
                 }
             }
+        });
 
-
-        }
-
-        enseignements.innerHTML = final;
-
-    });
 
 </script>

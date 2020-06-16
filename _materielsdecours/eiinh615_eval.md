@@ -1,6 +1,6 @@
 ---
 
-layout: support
+layout: materiel
 title: Evaluation Finale du projet PolyQuiz 
 
 date: 03/2020

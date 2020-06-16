@@ -1,5 +1,5 @@
 ---
-layout: support
+layout: materiel
 title: Analyse d'article scientifique
 date: 05/05/2020
 authors: seb

@@ -1,10 +1,10 @@
 ---
-layout: support
+layout: materiel
 title: UML par la pratique
 date: 01/2020
 authors: mbf
 institution: UCA
-level: 2
+level: 1
 user: 
 io: 
 ia: 

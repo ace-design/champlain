@@ -1,6 +1,6 @@
 ---
 
-layout: support
+layout: materiel
 
 title: "Conception d'interfaces parties"
 date: 01/2020
