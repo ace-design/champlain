@@ -153,7 +153,6 @@
     save.addEventListener("click", function() {
         //if (objets.length == 0) { /// On récupère tous les enseignements en parcourant le DOM, si on les a pas déjà récupéré 
             var recuperes = document.getElementById("enseignements"); /// On récupère la div qui contient les enseignements 
-            var annee = 2000;
             for (var i = 0; i < recuperes.children.length; i++) { /// On parcourt cette div  
                 if (recuperes.children[i].tagName != "H2") {  /// Sinon c'est qu'il s'agit d'une div représentant un enseignement 
                     var afficher = true; 

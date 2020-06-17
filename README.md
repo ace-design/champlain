@@ -4,8 +4,6 @@ Ce site présente le projet Formation en Génie Logiciel pour le développement 
 
 # Comment administrer le site ?
 
-## Niveau 1 : modifier des données 
-
 ### Les news 
 
 Chaque news correspond à un fichier .md du dossier _posts/ 
@@ -95,9 +93,9 @@ Il est possible de décrire l'enseignement dans le fichier markdown en utilisant
 
 ### Les matériels de cours  
 
-Chaque matériels de cours correspond à un fichier .md du dossier _supportscours/ 
+Chaque matériels de cours correspond à un fichier .md du dossier materielsdecours/ 
 La cartouche d'un matériel de cours doit à minima contenir :
-* layout : support
+* layout : materiel
 * title
 * date 
 * authors : séparés par une virgule s'il y en a plusieurs, et correspondant aux id des authors spécifiés dans le fichier _data/authors.yml
@@ -152,15 +150,5 @@ Il est possible de décrire le travail dans le fichier markdown en utilisant, si
 
 Rajoutez vos documents dans le dossier /assets/documents. Eventuellement les ranger dans des dossiers (par exemple, tous les matériels de cours d'un même enseignement dans un dossier).
 Le lien vers ce fichier est : "{{ site.url }}/assets/documents/nomdudocument" 
-
-
-
-
-##  Niveau 2 : modifier le style du site 
- 
-
-
-
-## Niveau 3 : modifier la structure 
 
 
